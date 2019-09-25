@@ -3,3 +3,104 @@
 --------------------------------------------------------------*/
 
 /* Front page */
+.canvas-isometric {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100vw;
+  height: 100vh;
+  max-height: 600px;
+  overflow: hidden;
+  color: $white;
+
+  .bg_video {
+    position: absolute;
+    @include transform-align-center;
+    min-width: 800px;
+    width: 150vh;
+    height: 100%;
+  }
+
+  .overlay-dim {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background-color: $color__dimmer;
+  }
+
+  .container {
+
+    &-contents {
+      position: relative;
+      top: 120px;
+
+      .greeting {
+        &-main {
+          margin: 0;
+          margin-bottom: 1.625rem;
+          padding: $base__padding;
+          padding-top: 0;
+          padding-bottom: 0;
+          text-transform: uppercase;
+          font-weight: 900;
+
+          span {
+            display: block;
+            line-height: 1;
+
+            &:nth-child(1) {
+              font-size: 1rem;
+              letter-spacing: 3.8px;
+              margin-bottom: 4px;
+            }
+
+            &:nth-child(2) {
+              font-size: 1.825rem;
+              letter-spacing: 1.5px;
+            }
+
+          }
+
+        }
+        &-careers {
+          p {
+            margin: 0;
+            padding: $base__padding;
+            padding-top: 0;
+            padding-bottom: 0;
+            font-size: 1.25rem;
+            font-weight: 300;
+            font-style: italic;
+            line-height: 38px;
+            letter-spacing: 1px;
+          }
+        }
+      }
+
+    } // end &-contents
+
+    &-scroll-indicator {
+      display: flex;
+      align-items: center;
+      position: absolute;
+      bottom: 4.5rem;
+      padding: $base__padding;
+      padding-top: 0;
+      padding-bottom: 0;
+
+      .ic_mouse {
+        width: 2rem;
+      }
+
+      p {
+        margin: 0;
+        margin-left: 1rem;
+        font-size: 0.75rem;
+        font-weight: 300;
+        letter-spacing: 0.4px;
+      }
+
+    } // end &-scroll-indicator
+
+  } // end .container&
+
+} // end .canvas-isometric

@@ -27,8 +27,9 @@
 
 				<nav id="site-navigation" class="main-navigation" role="navigation">
                     <div id="site-logo" class="main-logo">
-                        <img src="<?php echo get_template_directory_uri(); ?>/images/ic-logo.svg" alt="logo">
-
+                        <a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
+                            <img src="<?php echo get_template_directory_uri(); ?>/images/ic-logo.svg" alt="logo">
+                        </a>
                     </div>
 					<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu' ) ); ?>
 				</nav><!-- #site-navigation -->

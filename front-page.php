@@ -9,22 +9,46 @@ get_header(); ?>
 
 <div id="primary" class="content-area">
     <main id="main" class="site-main" role="main">
+        <?php the_post(); ?>
 
-		<?php if ( have_posts() ) : ?>
+        <section class="canvas-isometric">
+            <video class="bg_video" playsinline="" autoplay="" loop="" muted="" preload="none" src="<?php echo get_template_directory_uri();?>/images/video_main.mp4">
+                Your browser does not support Video.
+            </video>
 
-			<?php if ( is_home() && ! is_front_page() ) : ?>
-                <header>
-                    <h1 class="page-title screen-reader-text"><?php single_post_title(); ?></h1>
-                </header>
-			<?php endif; ?>
+            <div class="obj-loading"></div>
+            <div class="overlay-dim"></div>
+            <div class="container-contents">
+                <h2 class="greeting-main">
+                    <span>Hi, I am</span>
+                    <span>Yongmin</span>
+                </h2>
+                <div class="greeting-careers">
+                    <p>Full stack developer</p>
+                    <p>UX/UI designer</p>
+                    <p>and digital lover</p>
+                </div>
+            </div>
+            <div class="container-scroll-indicator">
+                <div class="ic_mouse">
+                    <div class="ic_mouse_body">
+                        <div class="ic_mouse_node"></div>
+                    </div>
+                    <svg class="ic_chevron_down" width="17px" height="10px" viewBox="0 0 17 10" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                        <polyline stroke="#FFFFFF" stroke-width="3" fill="none" fill-rule="evenodd" points="1.23672111 1 8.1102256 7.8735045 14.9837301 1"></polyline>
+                    </svg>
+                    <svg class="ic_chevron_down" width="17px" height="10px" viewBox="0 0 17 10" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                        <polyline stroke="#FFFFFF" stroke-width="3" fill="none" fill-rule="evenodd" points="1.23672111 1 8.1102256 7.8735045 14.9837301 1"></polyline>
+                    </svg>
+                </div>
+                <p>Scroll Down</p>
+            </div>
 
-            <?php the_post(); ?>
-			<?php the_content(); ?>
-		<?php else : ?>
+        </section>
 
-			<?php get_template_part( 'template-parts/content', 'none' ); ?>
-
-		<?php endif; ?>
+        <section>
+            <?php the_content(); ?>
+        </section>
 
     </main><!-- #main -->
 </div><!-- #primary -->

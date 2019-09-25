@@ -3,7 +3,7 @@
 --------------------------------------------------------------*/
 
 html {
-  box-sizing: border-box;
+
 }
 
 *,
@@ -14,6 +14,8 @@ html {
 }
 
 body {
+  font-size: 16px;
+  box-sizing: border-box;
   background: $color__background-body; /* Fallback for when there is no custom background color defined. */
 }
 
@@ -62,6 +64,7 @@ dd {
 }
 
 img {
+  display: block;
   height: auto; /* Make sure images are scaled correctly. */
   max-width: 100%; /* Adhere to container width. */
 }

@@ -1,23 +1,33 @@
 // Structure
 $media_tablet: 768px;
 $base__space-unit: 1.5rem;
+$base__padding: 1.25rem 1.875rem;
 
 // Colors
+$white: white;
+$black_header: rgba(43, 43, 43, 1);
+$black_default: rgba(71, 71, 71, 1);
+$grey : rgba(153, 153, 153, 1);
+$bg-grey: rgba(245, 245, 245, 1);
+$yellow : rgba(243, 169, 20, 1);
+$blue: rgba(78,143,249,1);
 
-$color__background-body: #fff;
-$color__text-main: #404040;
+$color__background-body: $bg-grey;
+$color__text-main: $black_default;
 
-$color__background-screen: #f1f1f1;
-$color__text-screen: #21759b;
+$color__background-screen: $bg-grey;
+$color__text-screen: $blue;
 
 $color__background-hr: #ccc;
 $color__background-pre: #eee;
 $color__background-ins: #fff9c0;
 $color__border-abbr: #666;
 
-$color__link: royalblue;
+$color__link: $blue;
 $color__link-visited: purple;
 $color__link-hover: midnightblue;
+
+$color__dimmer: rgba(0,0,0,0.72);
 
 // Typography
 

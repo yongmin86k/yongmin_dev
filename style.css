@@ -233,7 +233,7 @@ button,
 input,
 select,
 textarea {
-  color: #404040;
+  color: #474747;
   font-family: "Lato", sans-serif;
   line-height: 1.5; }
 
@@ -280,10 +280,6 @@ big {
 /*--------------------------------------------------------------
 # Elements
 --------------------------------------------------------------*/
-html {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box; }
-
 *,
 *:before,
 *:after {
@@ -292,7 +288,10 @@ html {
           box-sizing: inherit; }
 
 body {
-  background: #fff;
+  font-size: 16px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  background: whitesmoke;
   /* Fallback for when there is no custom background color defined. */ }
 
 blockquote,
@@ -331,6 +330,7 @@ dd {
   margin: 0 1.5rem 1.5rem; }
 
 img {
+  display: block;
   height: auto;
   /* Make sure images are scaled correctly. */
   max-width: 100%;
@@ -410,7 +410,7 @@ textarea {
 --------------------------------------------------------------*/
 /* Links */
 a {
-  color: royalblue; }
+  color: #4e8ff9; }
   a:visited {
     color: purple; }
   a:hover, a:focus, a:active {
@@ -421,6 +421,49 @@ a {
     outline: 0; }
 
 /* Menus */
+.main-navigation {
+  z-index: 9999;
+  position: fixed;
+  width: 100vw;
+  top: 0;
+  left: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 1.25rem 1.875rem; }
+  .main-navigation .menu-main-navigation-container {
+    -webkit-box-flex: 1;
+        -ms-flex-positive: 1;
+            flex-grow: 1; }
+
+.main-logo {
+  -webkit-box-flex: 0;
+      -ms-flex: none;
+          flex: none;
+  width: 3rem; }
+
+.main-navigation ul {
+  list-style-type: none;
+  margin: 0;
+  margin-left: 1.5rem;
+  padding: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  font-family: "Cormorant Unicase", serif;
+  text-transform: lowercase; }
+  .main-navigation ul a {
+    text-decoration: none;
+    color: white; }
+  .main-navigation ul li {
+    opacity: .5;
+    letter-spacing: .8px; }
+
 /* Small menu. */
 /*--------------------------------------------------------------
 # Accessibility
@@ -433,12 +476,12 @@ a {
   width: 1px;
   overflow: hidden; }
   .screen-reader-text:focus {
-    background-color: #f1f1f1;
+    background-color: whitesmoke;
     border-radius: 3px;
     -webkit-box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
             box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
     clip: auto !important;
-    color: #21759b;
+    color: #4e8ff9;
     display: block;
     font-weight: bold;
     height: auto;
@@ -573,3 +616,169 @@ object {
 # Page Templates
 --------------------------------------------------------------*/
 /* Front page */
+.canvas-isometric {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  max-height: 600px;
+  overflow: hidden;
+  color: white; }
+  .canvas-isometric .bg_video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+    min-width: 800px;
+    width: 150vh;
+    height: 100%; }
+  .canvas-isometric .overlay-dim {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.72); }
+  .canvas-isometric .container-contents {
+    position: relative;
+    top: 120px; }
+    .canvas-isometric .container-contents .greeting-main {
+      margin: 0;
+      margin-bottom: 1.625rem;
+      padding: 1.25rem 1.875rem;
+      padding-top: 0;
+      padding-bottom: 0;
+      text-transform: uppercase;
+      font-weight: 900; }
+      .canvas-isometric .container-contents .greeting-main span {
+        display: block;
+        line-height: 1; }
+        .canvas-isometric .container-contents .greeting-main span:nth-child(1) {
+          font-size: 1rem;
+          letter-spacing: 3.8px;
+          margin-bottom: 4px; }
+        .canvas-isometric .container-contents .greeting-main span:nth-child(2) {
+          font-size: 1.825rem;
+          letter-spacing: 1.5px; }
+    .canvas-isometric .container-contents .greeting-careers p {
+      margin: 0;
+      padding: 1.25rem 1.875rem;
+      padding-top: 0;
+      padding-bottom: 0;
+      font-size: 1.25rem;
+      font-weight: 300;
+      font-style: italic;
+      line-height: 38px;
+      letter-spacing: 1px; }
+  .canvas-isometric .container-scroll-indicator {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    position: absolute;
+    bottom: 4.5rem;
+    padding: 1.25rem 1.875rem;
+    padding-top: 0;
+    padding-bottom: 0; }
+    .canvas-isometric .container-scroll-indicator .ic_mouse {
+      width: 2rem; }
+    .canvas-isometric .container-scroll-indicator p {
+      margin: 0;
+      margin-left: 1rem;
+      font-size: 0.75rem;
+      font-weight: 300;
+      letter-spacing: 0.4px; }
+
+.ic_mouse_body {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 100%;
+  height: 3.125rem;
+  border-radius: 1rem;
+  border: 2px solid white; }
+
+.ic_mouse_node {
+  position: relative;
+  top: 4px;
+  width: 6px;
+  height: 6px;
+  border-radius: 3px;
+  background-color: white;
+  opacity: 0;
+  -webkit-animation: mouse_node 2500ms infinite;
+          animation: mouse_node 2500ms infinite; }
+
+.ic_chevron_down {
+  display: block;
+  margin: 0 auto;
+  width: 17px;
+  height: 10px;
+  margin-top: 4px;
+  -webkit-animation: chevronFadeOut 2500ms infinite;
+          animation: chevronFadeOut 2500ms infinite;
+  opacity: 0;
+  -webkit-animation-delay: 300ms;
+          animation-delay: 300ms; }
+  .ic_chevron_down:nth-of-type(1) {
+    margin-top: 8px;
+    -webkit-animation-delay: 0ms;
+            animation-delay: 0ms; }
+
+@-webkit-keyframes mouse_node {
+  0% {
+    top: 4px;
+    height: 6px;
+    opacity: 0; }
+  10% {
+    top: 4px; }
+  50% {
+    height: 12px;
+    opacity: 1; }
+  70% {
+    top: 12px;
+    height: 6px; }
+  100% {
+    top: 12px;
+    opacity: 0; } }
+
+@keyframes mouse_node {
+  0% {
+    top: 4px;
+    height: 6px;
+    opacity: 0; }
+  10% {
+    top: 4px; }
+  50% {
+    height: 12px;
+    opacity: 1; }
+  70% {
+    top: 12px;
+    height: 6px; }
+  100% {
+    top: 12px;
+    opacity: 0; } }
+
+@-webkit-keyframes chevronFadeOut {
+  15% {
+    opacity: 0; }
+  50% {
+    opacity: 1; }
+  85% {
+    opacity: 0; } }
+
+@keyframes chevronFadeOut {
+  15% {
+    opacity: 0; }
+  50% {
+    opacity: 1; }
+  85% {
+    opacity: 0; } }
