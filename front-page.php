@@ -19,7 +19,7 @@ get_header(); ?>
 			<?php endif; ?>
 
             <?php the_post(); ?>
-
+			<?php the_content(); ?>
 		<?php else : ?>
 
 			<?php get_template_part( 'template-parts/content', 'none' ); ?>
