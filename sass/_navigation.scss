@@ -25,8 +25,7 @@ a {
 }
 
 /* Menus */
-.site-header {
-}
+.site-header {}
 .main {
 	&-navigation {
 		z-index: 9999;
@@ -36,6 +35,10 @@ a {
 		display: flex;
 		align-items: center;
 		padding: $base__padding;
+		background-color: $color__dimmer;
+		.home & {
+			background-color: transparent;
+		}
 		//backdrop-filter: blur(2px);
 
 		.menu-main-navigation-container {
@@ -61,9 +64,13 @@ ul {
 		a {
 			text-decoration: none;
 			color: $white;
+			opacity: .5;
+
+			&[aria-current='page'] {
+				opacity: 1;
+			}
 		}
 		li {
-			opacity: .5;
 			letter-spacing: .8px;
 		}
 	}
