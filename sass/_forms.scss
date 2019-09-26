@@ -13,7 +13,7 @@ input[type="submit"] {
 	border-radius: 3px;
 	background: #e6e6e6;
 	box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.5), inset 0 15px 17px rgba(255, 255, 255, 0.5), inset 0 -5px 12px rgba(0, 0, 0, 0.05);
-	color: rgba(0, 0, 0, .8);
+	color: $color__text-main;
 	line-height: 1;
 	padding: .6rem 1rem .4rem;
 	text-shadow: 0 1px 0 rgba(255, 255, 255, 0.8);
@@ -27,6 +27,37 @@ input[type="submit"] {
 	&:focus {
 		border-color: #aaa #bbb #bbb;
 		box-shadow: inset 0 -1px 0 rgba(255, 255, 255, 0.5), inset 0 2px 5px rgba(0, 0, 0, 0.15);
+	}
+}
+
+// Front-page
+input[type="radio"] {
+	.filter-txt & {
+		display: none;
+	}
+}
+label {
+	.filter-txt & {
+		display: block;
+		height: 24px;
+		line-height: 24px;
+		padding: 0 .5rem;
+		font-size: 0.75rem;
+		border: $border__default-black;
+	}
+	.filter-txt:first-child & {
+		border-top-left-radius: 12px;
+		border-bottom-left-radius: 12px;
+		border-right: none;
+	}
+	.filter-txt:last-child & {
+		border-top-right-radius: 12px;
+		border-bottom-right-radius: 12px;
+		border-left: none;
+	}
+	.filter-txt.active & {
+		background-color: $black_default;
+		color: $white;
 	}
 }
 

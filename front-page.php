@@ -3,7 +3,9 @@
  * The main template file.
  *
  * @package ymk_dev_Theme
+ * Template Name: index
  */
+
 
 get_header(); ?>
 
@@ -46,9 +48,9 @@ get_header(); ?>
 
         </section>
 
-        <section>
-            <?php the_content(); ?>
-        </section>
+        <section class="hidden"></section>
+
+	    <?php get_template_part( 'template-parts/front-page/section' ); ?>
 
     </main><!-- #main -->
 </div><!-- #primary -->
