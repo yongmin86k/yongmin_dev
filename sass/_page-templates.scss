@@ -10,7 +10,6 @@
     position: fixed;
     top: 0; left: 0;
     width: 100vw;
-    height: 100vh;
     height: 600px;
     overflow: hidden;
     color: $white;
@@ -110,6 +109,57 @@
   } // end .canvas-isometric
 
   // Sections
+  .header-meta {
+    position: relative;
+    width: 100%;
+    padding: 2.625rem 2.25rem;
+    background-color: $color__background-body;
+
+    .section-title {
+      display: inline-block;
+      position: relative;
+      transition: $ani__time-default;
+      margin-bottom: 1rem;
+
+      &:after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        height: 1px;
+        width: 100%;
+        background-color: $black_default;
+      }
+
+      &:hover {
+        &:after {
+          background-color: $color__link-hover;
+        }
+      }
+    }
+
+    .filter {
+
+      &-works {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      &-txt {
+        min-width: 5rem;
+        text-align: center;
+
+        label {
+          transition: $ani__time-default;
+        }
+      }
+
+    } // end .filter-
+
+  } // .header-meta
+
   .hidden {
     width: 100%;
     height: 600px;
@@ -119,56 +169,6 @@
   .visible {
     position: relative;
     width: 100%;
-    min-height: 100vh;
     background-color: $color__background-body;
-
-    .header-meta {
-      width: 100%;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      position: absolute;
-      padding: 2.625rem 2.25rem;
-
-      .section-title {
-        position: relative;
-        transition: $ani__time-default;
-
-        &:after {
-          content: '';
-          position: absolute;
-          bottom: 0;
-          left: 0;
-          height: 1px;
-          width: 100%;
-          background-color: $black_default;
-        }
-
-        &:hover {
-          &:after {
-            background-color: $color__link-hover;
-          }
-        }
-      }
-
-      .filter {
-
-        &-works {
-          display: flex;
-          align-items: center;
-        }
-
-        &-txt {
-          text-align: center;
-
-          label {
-            transition: $ani__time-default;
-          }
-        }
-
-      }
-
-    } // .header-meta
-
   }
 } // end .home
