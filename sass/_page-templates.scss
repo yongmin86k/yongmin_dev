@@ -175,7 +175,6 @@
       &-works {
         position: relative;
         min-height: 600px;
-
       }
 
       &-meta {
@@ -193,8 +192,29 @@
           }
         }
 
+      } // end .article-meta
+
+    } // end .article
+
+    .tag {
+
+      &-meta {
+        padding: $base__padding;
+      } // end .tag-meta
+
+      &-container {
+        display: flex;
+        align-items: center;
+        &:first-child {
+          margin-bottom: .5rem;
+        }
       }
 
-    }
+      &-element {
+        margin: 0;
+        margin-right: .25rem;
+      }
+
+    } // end .tag
   }
 } // end .home

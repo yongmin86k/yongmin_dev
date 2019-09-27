@@ -29,6 +29,16 @@ a {
 		font-weight: 300;
 		text-decoration: underline;
 	}
+
+	&.tag-link {
+		display: block;
+		padding: 0 .5rem;
+		height: 1rem;
+		background-color: $black_default;
+		border-radius: .5rem;
+		color: $white;
+		line-height: 1rem;
+	}
 }
 
 /* Menus */

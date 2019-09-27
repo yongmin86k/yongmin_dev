@@ -43,6 +43,17 @@ p {
 		color: #999;
 		letter-spacing: .6px;
 	}
+
+	&.tag-element {
+		color: $black_default;
+		font-size: 0.625rem;
+		font-weight: 600;
+		text-transform: uppercase;
+		opacity: .5;
+		&:first-child {
+			opacity: 1;
+		}
+	}
 }
 
 dfn, cite, em, i {

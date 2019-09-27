@@ -259,6 +259,14 @@ p {
     font-weight: 800;
     color: #999;
     letter-spacing: .6px; }
+  p.tag-element {
+    color: #474747;
+    font-size: 0.625rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    opacity: .5; }
+    p.tag-element:first-child {
+      opacity: 1; }
 
 dfn, cite, em, i {
   font-style: italic; }
@@ -464,6 +472,14 @@ a {
     font-size: 0.75rem;
     font-weight: 300;
     text-decoration: underline; }
+  a.tag-link {
+    display: block;
+    padding: 0 .5rem;
+    height: 1rem;
+    background-color: #474747;
+    border-radius: .5rem;
+    color: white;
+    line-height: 1rem; }
 
 /* Menus */
 .main-navigation {
@@ -819,6 +835,20 @@ object {
       color: #999999; }
     .home .visible .article-meta .work-title {
       margin-bottom: .5rem; }
+  .home .visible .tag-meta {
+    padding: 1.25rem 1.875rem; }
+  .home .visible .tag-container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center; }
+    .home .visible .tag-container:first-child {
+      margin-bottom: .5rem; }
+  .home .visible .tag-element {
+    margin: 0;
+    margin-right: .25rem; }
 
 .ic_mouse_body {
   position: relative;
