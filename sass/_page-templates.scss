@@ -196,6 +196,39 @@
 
     } // end .article
 
+    .role {
+
+      &-meta {
+        padding: $base__padding;
+        &-title {
+          margin: 0;
+          margin-bottom: .125rem;
+        }
+      } // end .role-meta
+
+      &-container {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+      } // end .role-container
+
+      &-element {
+        position: relative;
+        margin: 0;
+        &:after {
+          position: relative;
+          left: -2px;
+          content: ',\2008';
+        }
+        &:last-of-type {
+          &:after {
+            display: none;
+          }
+        }
+      } // end .role-element
+
+    } // end .role
+
     .tag {
 
       &-meta {

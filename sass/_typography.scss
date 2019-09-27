@@ -40,8 +40,17 @@ p {
 	&.work-date {
 		font-size: 0.75rem;
 		font-weight: 800;
-		color: #999;
+		color: $grey;
 		letter-spacing: .6px;
+		text-transform: uppercase;
+	}
+
+	&.role-meta-title {
+		@extend p.work-date;
+	}
+
+	&.role-element {
+		font-size: .75rem;
 	}
 
 	&.tag-element {

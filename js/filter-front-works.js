@@ -1,7 +1,9 @@
 (function($) {
 
-    let workTaxonomies = [];
+    let workTaxonomies = [],
+        workRoles = [];
     appendWorkTaxonomies();
+    appendRoleTaxonomies();
 
     // document ready
     $(function(){
@@ -61,6 +63,23 @@
         })
     }
 
+    // Retrieve names of work_roles
+    function appendRoleTaxonomies(){
+        let taxonomies = 'work_roles';
+        $.ajax({
+            method: 'get',
+            url: `${ymk_api_works.rest_url}wp/v2/${taxonomies}`,
+        }).always(function () {
+
+        }).fail(function () {
+
+        }).done(function (result) {
+            workRoles = result;
+        });
+
+    }
+
+    // Fetch work-post data with localized wp-api
     function fetchWordPressData($input){
         let strURI, filterByID,
             post_type = 'work_posts';
@@ -78,22 +97,29 @@
 
         }).always( function(){
             $('#contents-front-page-works').html('');
-        }).fail(function(){
+
+        }).fail(function(err){
+            console.log(err);
 
         }).done(function(result){
             const arr_data = result;
 
-            // Sort taxonomies in ASC order
+            // Sort work_taxonomies in ASC order
             arr_data.forEach( function(data) {
                data.work_taxonomies.sort((a, b) => {
                     return a - b
                });
             });
 
+            // Sort work_roles in ASC order
+            arr_data.forEach( function(data){
+               data.work_roles.sort((a, b) => {
+                 return a - b
+               });
+            });
 
             arr_data.forEach( function(data, index){
-                let date_start, date_end, date_parsed, title,
-                    url, roles;
+                let date_start, date_end, date_parsed, title, url;
 
                 date_start = data.cmb2.work_details.date_start.slice(0,7).replace('-', '. ');
                 date_end = data.cmb2.work_details.date_end.slice(0,7).replace('-', '. ');
@@ -112,9 +138,38 @@
                                 Read more
                             </a>
                         </div>
+                        <div class="role-meta">
+                            <p class="role-meta-title">Roles</p>
+                            <div class="role-container"></div>
+                        </div>
                         <div class="tag-meta"></div>
                     </article>
                `); // end $('#contents-front-page-works').append()
+
+                console.log(data);
+                if (data.work_roles.length > 0) {
+
+                    data.work_roles.forEach(function (value) {
+                        let checkValue, $thisID, $thisLink, $thisName;
+
+                        checkValue = workRoles.find(function(workRole){
+                            return workRole.id === value
+                        });
+
+                        $thisID = checkValue.id;
+                        $thisLink = checkValue.link;
+                        $thisName = checkValue.name;
+
+                        $(`#ymk-works-${index}`).find('.role-container').append(`
+                            <p class="role-element role-tag-id-${$thisID}">
+                                <a class="role-link" href="${$thisLink}">
+                                    ${$thisName}
+                                </a>
+                            </p>                        
+                        `); // end append()
+
+                    }); // endforEach(data.work_roles)
+                } // endif(data.work_roles)
 
                 // Create tags of each latest work
                 if (data.work_taxonomies.length > 0) {
@@ -151,12 +206,9 @@
                                     </a>
                                 </p>
                             `);
-                        }
-
-                    });
-
-                }
-
+                        } // endif(checkValue.parent)
+                    }); // endforEach(data.work_taxonomies)
+                } // endif(data.work_taxonomies.length)
             }); // end arr_data.forEach()
 
         });

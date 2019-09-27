@@ -254,11 +254,14 @@ h3 {
 /* Copy */
 p {
   margin-bottom: 1.5rem; }
-  p.work-date {
+  p.work-date, p.role-meta-title {
     font-size: 0.75rem;
     font-weight: 800;
-    color: #999;
-    letter-spacing: .6px; }
+    color: #999999;
+    letter-spacing: .6px;
+    text-transform: uppercase; }
+  p.role-element {
+    font-size: .75rem; }
   p.tag-element {
     color: #474747;
     font-size: 0.625rem;
@@ -835,6 +838,29 @@ object {
       color: #999999; }
     .home .visible .article-meta .work-title {
       margin-bottom: .5rem; }
+  .home .visible .role-meta {
+    padding: 1.25rem 1.875rem; }
+    .home .visible .role-meta-title {
+      margin: 0;
+      margin-bottom: .125rem; }
+  .home .visible .role-container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap; }
+  .home .visible .role-element {
+    position: relative;
+    margin: 0; }
+    .home .visible .role-element:after {
+      position: relative;
+      left: -2px;
+      content: ',\2008'; }
+    .home .visible .role-element:last-of-type:after {
+      display: none; }
   .home .visible .tag-meta {
     padding: 1.25rem 1.875rem; }
   .home .visible .tag-container {
