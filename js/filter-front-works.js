@@ -88,11 +88,29 @@
             const arr_data = result;
 
             arr_data.forEach( function(data, index){
-                console.log(data.cmb2.work_details );
+                let date_start, date_end, date_parsed, title,
+                    url, roles, tag__main, tag__sub;
+
+
+                date_start = data.cmb2.work_details.date_start.slice(0,7).replace('-', '. ');
+                date_end = data.cmb2.work_details.date_end.slice(0,7).replace('-', '. ');
+                date_parsed = date_start === date_end ? date_start : `${date_start} - ${date_end}`;
+                title = data.title.rendered;
+
+                url = data.cmb2.work_details.work_url;
+
+                console.log( data.cmb2 );
 
                 $('#contents-front-page-works').append(`
-                    <article id="ymk-works-${index}">
-                        <h3>${data.title.rendered}</h3>
+                    <article id="ymk-works-${index}" class="article-works">
+                        <div class="article-meta">
+                            <p class="work-date">${date_parsed}</p>
+                            <h3 class="work-title">${title}</h3>
+                            <a class="work-link" href="${url}">
+                                Read more <i class="fas fa-long-arrow-alt-right"></i>
+                            </a>
+                        </div>
+                        
                     </article>
                `);
             });

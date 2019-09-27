@@ -55,6 +55,13 @@ function works__cmb2_metaboxes() {
 		'date_format' => 'Y-m-d',
 	) );
 
+	$work_details->add_field( array(
+		'name' => __( 'Link URL', 'cmb2' ),
+		'id'   => 'work_url',
+		'type' => 'text_url',
+		// 'protocols' => array( 'http', 'https', 'ftp', 'ftps', 'mailto', 'news', 'irc', 'gopher', 'nntp', 'feed', 'telnet' ), // Array of allowed protocols
+	) );
+
 }
 
 add_action( 'cmb2_init', 'works__cmb2_metaboxes' );
@@ -65,11 +72,6 @@ add_action( 'cmb2_init', 'works__cmb2_metaboxes' );
 function filter_rest_work_posts_query($query_vars) {
 
 	$query_vars['posts_per_page'] = 4;
-	$query_vars['orderby'] = 'meta_value_num';
-	$query_vars['order'] = array(
-			'key_work_start' => 'desc',
-			'key_work_end' => 'desc',
-		);
 
 	$query_vars['meta_query'] = array(
 		'relation' => 'AND',
@@ -81,6 +83,11 @@ function filter_rest_work_posts_query($query_vars) {
 				'key' => 'date_end',
 				'compare' => 'EXISTS',
 			),
+	);
+
+	$query_vars['orderby'] = array(
+		'key_work_start' => 'DESC',
+		'key_work_end' => 'DESC',
 	);
 
 	return $query_vars;

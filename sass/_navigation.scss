@@ -23,6 +23,12 @@ a {
 	&:active {
 		outline: 0;
 	}
+
+	&.work-link {
+		font-size: 0.75rem;
+		font-weight: 300;
+		text-decoration: underline;
+	}
 }
 
 /* Menus */

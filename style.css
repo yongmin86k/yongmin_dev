@@ -242,14 +242,23 @@ h1, h2, h3, h4, h5, h6 {
   clear: both;
   color: #2b2b2b; }
 
-h3.section-title {
-  font-weight: 600;
-  font-size: 0.75rem;
-  margin: 0; }
+h3 {
+  font-weight: 600; }
+  h3.section-title {
+    font-size: 0.75rem;
+    margin: 0; }
+  h3.work-title {
+    font-size: 2rem;
+    line-height: 2.5rem; }
 
 /* Copy */
 p {
   margin-bottom: 1.5rem; }
+  p.work-date {
+    font-size: 0.75rem;
+    font-weight: 800;
+    color: #999;
+    letter-spacing: .6px; }
 
 dfn, cite, em, i {
   font-style: italic; }
@@ -451,6 +460,10 @@ a {
     outline: thin dotted; }
   a:hover, a:active {
     outline: 0; }
+  a.work-link {
+    font-size: 0.75rem;
+    font-weight: 300;
+    text-decoration: underline; }
 
 /* Menus */
 .main-navigation {
@@ -793,6 +806,19 @@ object {
   position: relative;
   width: 100%;
   background-color: whitesmoke; }
+  .home .visible .article-works {
+    position: relative;
+    min-height: 600px; }
+  .home .visible .article-meta {
+    position: relative;
+    padding: 1.25rem 1.875rem; }
+    .home .visible .article-meta p, .home .visible .article-meta h3 {
+      margin: 0; }
+    .home .visible .article-meta .work-date {
+      margin-bottom: .125rem;
+      color: #999999; }
+    .home .visible .article-meta .work-title {
+      margin-bottom: .5rem; }
 
 .ic_mouse_body {
   position: relative;

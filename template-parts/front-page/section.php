@@ -38,25 +38,4 @@
 </div> <!-- end .header-meta -->
 
 <section id="contents-front-page-works" class="visible">
-    <?php
-//        $list_works = array(
-//            'post_type' => 'work_posts',
-//            'posts_per_page' => -1,
-//            'order' => 'desc',
-//        );
-//
-//        $works_posts = new WP_Query( $list_works );
-//
-//        while( $works_posts->have_posts() ):
-//	        $works_posts->the_post();
-//
-//            $entries = get_post_meta( get_the_ID(), 'dates', true );
-//
-//            foreach ( (array) $entries as $key => $entry ) {
-//                var_dump($entry);
-//            }
-//
-//        endwhile;
-//        wp_reset_postdata();
-    ?>
 </section>

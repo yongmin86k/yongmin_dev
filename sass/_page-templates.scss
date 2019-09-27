@@ -170,5 +170,31 @@
     position: relative;
     width: 100%;
     background-color: $color__background-body;
+
+    .article {
+      &-works {
+        position: relative;
+        min-height: 600px;
+
+      }
+
+      &-meta {
+        position: relative;
+        padding: $base__padding;
+
+        p, h3 { margin: 0;}
+        .work {
+          &-date {
+            margin-bottom: .125rem;
+            color: $grey;
+          }
+          &-title {
+            margin-bottom: .5rem;
+          }
+        }
+
+      }
+
+    }
   }
 } // end .home
