@@ -1,5 +1,4 @@
 <div class="header-meta">
-
     <h3 class="section-title">
         <a href="<?php echo esc_url( home_url( '/works' ) ) ;?>">
             Latest Works
@@ -38,4 +37,11 @@
 </div> <!-- end .header-meta -->
 
 <section id="contents-front-page-works" class="visible">
+    <!-- Fetch data with ajax -->
 </section>
+
+<div class="read-more-container">
+    <a class="read-more-link" href="<?php echo esc_url( home_url( '/works' ) ) ;?>">
+        See all works —>
+    </a>
+</div>

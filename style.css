@@ -246,10 +246,19 @@ h3 {
   font-weight: 600; }
   h3.section-title {
     font-size: 0.75rem;
-    margin: 0; }
+    margin: 0;
+    margin-bottom: 1rem; }
+    .section-front-about-me h3.section-title {
+      margin-bottom: 0; }
   h3.work-title {
     font-size: 2rem;
     line-height: 2.5rem; }
+
+h4.sub-title {
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 1.6px;
+  text-transform: uppercase; }
 
 /* Copy */
 p {
@@ -270,9 +279,21 @@ p {
     opacity: .5; }
     p.tag-element:first-child {
       opacity: 1; }
+  p.about-me-description-para {
+    font-size: 2.5rem;
+    font-weight: 300;
+    line-height: 1.3;
+    letter-spacing: -1.8px; }
+  p.skills-set-element-title {
+    font-size: .5rem;
+    font-weight: 700;
+    text-align: center; }
 
 dfn, cite, em, i {
   font-style: italic; }
+  .about-me-description-para dfn, .about-me-description-para cite, .about-me-description-para em, .about-me-description-para i {
+    font-weight: 400;
+    letter-spacing: 0; }
 
 blockquote {
   margin: 0 1.5rem; }
@@ -471,7 +492,7 @@ a {
     outline: thin dotted; }
   a:hover, a:active {
     outline: 0; }
-  a.work-link {
+  a.work-link, a.read-more-link {
     font-size: 0.75rem;
     font-weight: 300;
     text-decoration: underline; }
@@ -781,14 +802,15 @@ object {
   position: relative;
   top: 1px;
   width: 100%;
-  padding: 2.625rem 2.25rem;
+  padding: 1.25rem 1.875rem;
+  padding-top: 2.625rem;
+  padding-bottom: 2.625rem;
   background-color: whitesmoke; }
   .home .header-meta .section-title {
     display: inline-block;
     position: relative;
     -webkit-transition: 0.3s;
-    transition: 0.3s;
-    margin-bottom: 1rem; }
+    transition: 0.3s; }
     .home .header-meta .section-title:after {
       content: '';
       position: absolute;
@@ -817,6 +839,12 @@ object {
       -webkit-transition: 0.3s;
       transition: 0.3s; }
 
+.home .read-more-container {
+  position: relative;
+  background-color: whitesmoke;
+  padding: 1.25rem 1.875rem;
+  padding-bottom: 3.75rem; }
+
 .home .hidden {
   width: 100%;
   height: 600px;
@@ -826,6 +854,8 @@ object {
   position: relative;
   width: 100%;
   background-color: whitesmoke; }
+  .home .visible .article-contents {
+    position: relative; }
   .home .visible .article-works {
     display: none;
     position: relative;
@@ -894,6 +924,60 @@ object {
   .home .visible .tag-element {
     margin: 0;
     margin-right: .25rem; }
+  .home .visible .about-me-gradation-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 50%;
+    background-image: linear-gradient(329deg, #ace0f9, #fff1eb); }
+    .home .visible .about-me-gradation-bg:nth-of-type(2) {
+      top: 50%;
+      background-image: linear-gradient(211deg, #ace0f9, #fff1eb); }
+  .home .visible.section-front-about-me .header-meta {
+    background-color: transparent; }
+  .home .visible.section-front-about-me .about-me-description {
+    position: relative;
+    padding: 1.25rem 1.875rem;
+    padding-top: 0; }
+    .home .visible.section-front-about-me .about-me-description-para {
+      margin: 0; }
+    .home .visible.section-front-about-me .about-me-description span {
+      display: block; }
+  .home .visible.section-front-about-me .read-more-container {
+    background-color: transparent; }
+  .home .visible.section-front-about-me .container-skills {
+    position: relative;
+    padding-bottom: 3rem; }
+    .home .visible.section-front-about-me .container-skills .sub-title {
+      margin: 0;
+      padding: 1.25rem 1.875rem;
+      padding-top: 0;
+      padding-bottom: 0.75rem; }
+  .home .visible.section-front-about-me .skills-set {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(5rem, 1fr));
+    justify-items: center;
+    grid-gap: 1.25rem;
+    padding: 0 1rem; }
+    .home .visible.section-front-about-me .skills-set-element {
+      position: relative;
+      border-radius: .5rem;
+      background-color: white;
+      -webkit-box-shadow: 0 2px 8px 0 rgba(0, 32, 66, 0.28);
+              box-shadow: 0 2px 8px 0 rgba(0, 32, 66, 0.28);
+      overflow: hidden;
+      width: 5rem;
+      height: 5rem; }
+      .home .visible.section-front-about-me .skills-set-element-grid, .home .visible.section-front-about-me .skills-set-element-img {
+        position: absolute;
+        top: 0;
+        left: 0; }
+      .home .visible.section-front-about-me .skills-set-element-title {
+        position: absolute;
+        width: 100%;
+        margin: 0;
+        bottom: .375rem; }
 
 .ic_mouse_body {
   position: relative;

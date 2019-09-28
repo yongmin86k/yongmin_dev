@@ -118,8 +118,6 @@
             method: 'get',
             url: strURI,
         }).always( function(){
-            // $('#contents-front-page-works').html('Loading');
-
         }).fail(function(err){
             console.log(err);
 
@@ -139,6 +137,8 @@
                  return a - b
                });
             });
+
+            $('#contents-front-page-works').html('');
 
             arr_data.forEach( function(data, index){
                 let date_start, date_end, date_parsed, imgID, title, url;

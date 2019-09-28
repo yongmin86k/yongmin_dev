@@ -10,6 +10,7 @@
 get_header(); ?>
 
 <div id="primary" class="content-area">
+
     <main id="main" class="site-main" role="main">
         <?php the_post(); ?>
 
@@ -50,7 +51,8 @@ get_header(); ?>
 
         <section class="hidden"></section>
 
-	    <?php get_template_part( 'template-parts/front-page/section' ); ?>
+	    <?php get_template_part( 'template-parts/front-page/section__work' ); ?>
+	    <?php get_template_part( 'template-parts/front-page/section__about_me' ); ?>
 
     </main><!-- #main -->
 </div><!-- #primary -->

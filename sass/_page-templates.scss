@@ -108,19 +108,20 @@
 
   } // end .canvas-isometric
 
-  // Sections
   .header-meta {
     position: relative;
     top: 1px;
     width: 100%;
-    padding: 2.625rem 2.25rem;
+    padding: $base__padding;
+    padding-top: 2.625rem;
+    padding-bottom: 2.625rem;
+    //padding: 2.625rem 2.25rem;
     background-color: $color__background-body;
 
     .section-title {
       display: inline-block;
       position: relative;
       transition: $ani__time-default;
-      margin-bottom: 1rem;
 
       &:after {
         content: '';
@@ -137,10 +138,9 @@
           background-color: $color__link-hover;
         }
       }
-    }
+    } // end .section-title
 
     .filter {
-
       &-works {
         width: 100%;
         display: flex;
@@ -161,6 +161,16 @@
 
   } // .header-meta
 
+  .read-more {
+    &-container {
+      position: relative;
+      background-color: $color__background-body;
+      padding: $base__padding;
+      padding-bottom: 3.75rem;
+    }
+  }
+
+  // Sections
   .hidden {
     width: 100%;
     height: 600px;
@@ -173,6 +183,9 @@
     background-color: $color__background-body;
 
     .article {
+      &-contents {
+        position: relative;
+      }
       &-works {
         display: none;
         position: relative;
@@ -271,5 +284,100 @@
       }
 
     } // end .tag
-  }
+
+    .about-me {
+      &-gradation-bg {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 50%;
+        background-image: linear-gradient(329deg, #ace0f9, #fff1eb);
+
+        &:nth-of-type(2) {
+          top: 50%;
+          background-image: linear-gradient(211deg, #ace0f9, #fff1eb);
+        }
+      } // end .about-me-gradation-bg
+    } // end .about-me
+
+  &.section-front-about-me {
+    .header-meta {
+      background-color: transparent;
+    }
+
+    .about-me  {
+      &-description {
+        position: relative;
+        padding: $base__padding;
+        padding-top: 0;
+
+        &-para {
+          margin: 0;
+        }
+
+        span {
+          display: block;
+        }
+
+      }
+
+    } // end .about-me
+
+    .read-more-container {
+      background-color: transparent;
+    }
+
+    .container-skills {
+      position: relative;
+      padding-bottom: 3rem;
+
+      .sub-title {
+        margin: 0;
+        padding: $base__padding;
+        padding-top: 0;
+        padding-bottom: 0.75rem;
+      }
+
+    } // end .container-skills
+
+    .skills {
+      &-set {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(5rem, 1fr) );
+        justify-items: center;
+        grid-gap: 1.25rem;
+        padding: 0 1rem;
+
+        &-element {
+          position: relative;
+          border-radius: .5rem;
+          background-color: $white;
+          box-shadow: 0 2px 8px 0 rgba(0,32,66,0.28);
+          overflow: hidden;
+          width: 5rem; height: 5rem;
+
+          &-grid {
+            position: absolute;
+            top: 0;
+            left: 0;
+          }
+          &-img {
+            @extend .skills-set-element-grid;
+          }
+          &-title {
+            position: absolute;
+            width: 100%;
+            margin: 0;
+            bottom: .375rem;
+          }
+
+        } // end .skills-set-element
+      } // end .skills-set
+    } // end .skills
+
+  } // end .visible.section-front-about-me
+
+  } // end .visible
+
 } // end .home
