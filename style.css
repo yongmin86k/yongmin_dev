@@ -779,6 +779,7 @@ object {
 
 .home .header-meta {
   position: relative;
+  top: 1px;
   width: 100%;
   padding: 2.625rem 2.25rem;
   background-color: whitesmoke; }
@@ -826,8 +827,26 @@ object {
   width: 100%;
   background-color: whitesmoke; }
   .home .visible .article-works {
+    display: none;
     position: relative;
-    min-height: 600px; }
+    min-height: 600px;
+    padding-top: 132px; }
+  .home .visible .article-feat-img {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden; }
+    .home .visible .article-feat-img .work-feat-img {
+      display: none;
+      position: relative;
+      left: -64px;
+      max-width: none;
+      width: auto;
+      height: 100%;
+      opacity: .24;
+      -webkit-transition: left 2s ease-out;
+      transition: left 2s ease-out; }
   .home .visible .article-meta {
     position: relative;
     padding: 1.25rem 1.875rem; }

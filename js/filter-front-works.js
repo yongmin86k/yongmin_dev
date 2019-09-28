@@ -1,5 +1,5 @@
 (function($) {
-
+    const animationTime = 700;
     let workTaxonomies = [],
         workRoles = [];
     appendWorkTaxonomies();
@@ -79,6 +79,29 @@
 
     }
 
+    // Retrieve and add feature images of latest works
+    function getFeaturedImage(imgID, index, url){
+        $.ajax({
+            method: 'get',
+            url: `${ymk_api_works.rest_url}wp/v2/media/${imgID}`,
+        }).always(function () {
+
+        }).fail(function (err) {
+            console.log(err);
+        }).done(function (result) {
+            let imgSrc = result.source_url;
+
+            $(`#${index}`).find('.article-feat-img').append(`
+                <a href="${url}">
+                    <img class="work-feat-img" src="${imgSrc}">
+                </a>
+            `);
+
+            $(`#${index}`).find('.work-feat-img').fadeIn(animationTime);
+
+        });
+    }
+
     // Fetch work-post data with localized wp-api
     function fetchWordPressData($input){
         let strURI, filterByID,
@@ -94,9 +117,8 @@
         $.ajax({
             method: 'get',
             url: strURI,
-
         }).always( function(){
-            $('#contents-front-page-works').html('');
+            // $('#contents-front-page-works').html('Loading');
 
         }).fail(function(err){
             console.log(err);
@@ -119,11 +141,12 @@
             });
 
             arr_data.forEach( function(data, index){
-                let date_start, date_end, date_parsed, title, url;
+                let date_start, date_end, date_parsed, imgID, title, url;
 
                 date_start = data.cmb2.work_details.date_start.slice(0,7).replace('-', '. ');
                 date_end = data.cmb2.work_details.date_end.slice(0,7).replace('-', '. ');
                 date_parsed = date_start === date_end ? date_start : `${date_start} - ${date_end}`;
+                imgID = data.featured_media;
                 title = data.title.rendered;
 
                 url = data.cmb2.work_details.work_url;
@@ -131,22 +154,27 @@
                 // Create general info of each latest work
                 $('#contents-front-page-works').append(`
                     <article id="ymk-works-${index}" class="article-works">
-                        <div class="article-meta">
-                            <p class="work-date">${date_parsed}</p>
-                            <h3 class="work-title">${title}</h3>
-                            <a class="work-link" href="${url}">
-                                Read more
-                            </a>
+                        <div class="article-feat-img"></div>
+                        <div class="article-contents">
+                            <div class="article-meta">
+                                <p class="work-date">${date_parsed}</p>
+                                <h3 class="work-title">${title}</h3>
+                                <a class="work-link" href="${url}">
+                                    Read more
+                                </a>
+                            </div>
+                            <div class="role-meta">
+                                <p class="role-meta-title">Roles</p>
+                                <div class="role-container"></div>
+                            </div>
+                            <div class="tag-meta"></div>
                         </div>
-                        <div class="role-meta">
-                            <p class="role-meta-title">Roles</p>
-                            <div class="role-container"></div>
-                        </div>
-                        <div class="tag-meta"></div>
                     </article>
                `); // end $('#contents-front-page-works').append()
 
-                console.log(data);
+                $(`#ymk-works-${index}`).fadeIn(animationTime);
+
+                // Create roles of each latest work
                 if (data.work_roles.length > 0) {
 
                     data.work_roles.forEach(function (value) {
@@ -209,10 +237,14 @@
                         } // endif(checkValue.parent)
                     }); // endforEach(data.work_taxonomies)
                 } // endif(data.work_taxonomies.length)
+
+                if ( imgID ){
+                    getFeaturedImage(imgID, `ymk-works-${index}`, url);
+                }
+
             }); // end arr_data.forEach()
+        }); //end $.ajax
 
-        });
-
-    }
+    } // end function fetchWordPressData
 
 })(jQuery);
