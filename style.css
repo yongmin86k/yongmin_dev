@@ -800,12 +800,19 @@ object {
 
 .home .header-meta {
   position: relative;
-  top: 1px;
   width: 100%;
   padding: 1.25rem 1.875rem;
   padding-top: 2.625rem;
   padding-bottom: 2.625rem;
   background-color: whitesmoke; }
+  .home .header-meta:after {
+    position: absolute;
+    content: '';
+    width: 100%;
+    height: 2px;
+    bottom: -1px;
+    left: 0;
+    background-color: whitesmoke; }
   .home .header-meta .section-title {
     display: inline-block;
     position: relative;
@@ -844,6 +851,22 @@ object {
   background-color: whitesmoke;
   padding: 1.25rem 1.875rem;
   padding-bottom: 3.75rem; }
+  .home .read-more-container:before {
+    position: absolute;
+    content: '';
+    left: 0;
+    top: -1px;
+    height: 2px;
+    width: 100%;
+    background-color: whitesmoke; }
+  .home .read-more-container:after {
+    position: absolute;
+    content: '';
+    left: 0;
+    bottom: 0;
+    height: 1px;
+    width: 100%;
+    background-color: whitesmoke; }
 
 .home .hidden {
   width: 100%;
@@ -936,6 +959,8 @@ object {
       background-image: linear-gradient(211deg, #ace0f9, #fff1eb); }
   .home .visible.section-front-about-me .header-meta {
     background-color: transparent; }
+    .home .visible.section-front-about-me .header-meta:after {
+      display: none; }
   .home .visible.section-front-about-me .about-me-description {
     position: relative;
     padding: 1.25rem 1.875rem;
@@ -946,6 +971,8 @@ object {
       display: block; }
   .home .visible.section-front-about-me .read-more-container {
     background-color: transparent; }
+    .home .visible.section-front-about-me .read-more-container:after, .home .visible.section-front-about-me .read-more-container:before {
+      display: none; }
   .home .visible.section-front-about-me .container-skills {
     position: relative;
     padding-bottom: 3rem; }
