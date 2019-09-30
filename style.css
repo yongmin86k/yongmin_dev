@@ -314,8 +314,7 @@ p {
   .container-contact p {
     font-size: .75rem;
     font-weight: 300;
-    line-height: 1rem;
-    margin: .5rem 0; }
+    line-height: 1rem; }
 
 dfn, cite, em, i {
   font-style: italic; }
@@ -424,6 +423,7 @@ table {
 footer {
   margin: 0;
   padding: 1.25rem 1.875rem;
+  padding-top: 1rem;
   background-color: #2b2b2b; }
 
 /*--------------------------------------------------------------
@@ -1063,6 +1063,8 @@ object {
   .home .visible.section-front-about-me .container-skills {
     position: relative;
     padding-bottom: 3rem; }
+    .home .visible.section-front-about-me .container-skills:last-of-type {
+      padding-bottom: 3rem; }
     .home .visible.section-front-about-me .container-skills .sub-title {
       margin: 0;
       padding: 1.25rem 1.875rem;
@@ -1111,10 +1113,15 @@ object {
         background-color: #f3a914; }
     .home .visible.section-front-contact .container-contact {
       padding: 1.25rem 1.875rem;
-      padding-top: 0; }
+      padding-top: 0;
+      padding-bottom: 1rem; }
       .home .visible.section-front-contact .container-contact .contact-title {
         margin: 0;
         margin-bottom: 32px; }
+      .home .visible.section-front-contact .container-contact p {
+        margin: .5rem 0; }
+        .home .visible.section-front-contact .container-contact p:last-of-type {
+          margin-bottom: 2rem; }
 
 .ic_mouse_body {
   position: relative;

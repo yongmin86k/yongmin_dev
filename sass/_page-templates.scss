@@ -364,6 +364,9 @@
     .container-skills {
       position: relative;
       padding-bottom: 3rem;
+      &:last-of-type {
+        padding-bottom: 3rem;
+      }
 
       .sub-title {
         margin: 0;
@@ -441,14 +444,22 @@
     .container-contact {
       padding: $base__padding;
       padding-top: 0;
+      padding-bottom: 1rem;
 
       .contact {
         &-title {
           margin: 0;
           margin-bottom: 32px;
         } // end .contact-title
-
       } // end .contact
+
+      p {
+        margin: .5rem 0;
+        &:last-of-type {
+          margin-bottom: 2rem;
+        }
+      }
+
     } // end .container-contact
   } // end .visible.section-front-contact
 

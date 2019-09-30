@@ -29,7 +29,7 @@
         }
 
     }); // end document ready
-    
+
     // Retrieve names of work_taxonomies
     function appendWorkTaxonomies(){
         let taxonomies = 'work_taxonomies';
