@@ -14,14 +14,14 @@
 			I'm really welcome you to contact me with your awesome project.
 		</p>
 		<p>
-			Send me a brief email to <a href="mailto:yongmin86k@gmail.com">yongmin86k@gmail.com</a>
+			Send me a brief email to <a href="mailto:yongmin86k@gmail.com" target="_blank">yongmin86k@gmail.com</a>
 		</p>
 		<p>
 			I'll send an email back as soon as possible to share conversation with you.
 		</p>
 
 		<button class="default" type="button">
-			<a href="mailto:yongmin86k@gmail.com">Email me</a>
+			<a href="mailto:yongmin86k@gmail.com" target="_blank">Email me</a>
 		</button>
 
 	</div>
