@@ -73,3 +73,9 @@ table {
   margin: 0 0 $base__space-unit;
   width: 100%;
 }
+
+footer {
+  margin: 0;
+  padding: $base__padding;
+  background-color: $black_header;
+}

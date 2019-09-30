@@ -53,6 +53,7 @@ get_header(); ?>
 
 	    <?php get_template_part( 'template-parts/front-page/section__work' ); ?>
 	    <?php get_template_part( 'template-parts/front-page/section__about_me' ); ?>
+	    <?php get_template_part( 'template-parts/front-page/section__contact' ); ?>
 
     </main><!-- #main -->
 </div><!-- #primary -->

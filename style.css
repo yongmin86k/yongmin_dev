@@ -235,7 +235,19 @@ select,
 textarea {
   color: #474747;
   font-family: "Lato", sans-serif;
-  line-height: 1.5; }
+  line-height: 1.5;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box; }
+
+button.default a {
+  font-size: .75rem;
+  font-weight: 400;
+  letter-spacing: .125rem;
+  text-decoration: none;
+  text-transform: uppercase; }
+
+section.section-front-contact {
+  color: white; }
 
 /* Headings */
 h1, h2, h3, h4, h5, h6 {
@@ -250,6 +262,9 @@ h3 {
     margin-bottom: 1rem; }
     .section-front-about-me h3.section-title {
       margin-bottom: 0; }
+    .section-front-contact h3.section-title {
+      margin-bottom: 0;
+      color: #f3a914; }
   h3.work-title {
     font-size: 2rem;
     line-height: 2.5rem; }
@@ -260,9 +275,17 @@ h4.sub-title {
   letter-spacing: 1.6px;
   text-transform: uppercase; }
 
+.section-front-contact h4 {
+  color: white;
+  font-size: 20px;
+  font-weight: 300;
+  line-height: 28px; }
+  .section-front-contact h4 em {
+    font-weight: 400; }
+
 /* Copy */
 p {
-  margin-bottom: 1.5rem; }
+  margin: 1.5rem 0; }
   p.work-date, p.role-meta-title {
     font-size: 0.75rem;
     font-weight: 800;
@@ -288,6 +311,11 @@ p {
     font-size: .5rem;
     font-weight: 700;
     text-align: center; }
+  .container-contact p {
+    font-size: .75rem;
+    font-weight: 300;
+    line-height: 1rem;
+    margin: .5rem 0; }
 
 dfn, cite, em, i {
   font-style: italic; }
@@ -323,6 +351,12 @@ mark, ins {
 
 big {
   font-size: 125%; }
+
+footer {
+  color: white; }
+  footer a {
+    font-size: .75rem;
+    color: white; }
 
 /*--------------------------------------------------------------
 # Elements
@@ -387,6 +421,11 @@ table {
   margin: 0 0 1.5rem;
   width: 100%; }
 
+footer {
+  margin: 0;
+  padding: 1.25rem 1.875rem;
+  background-color: #2b2b2b; }
+
 /*--------------------------------------------------------------
 # Forms
 --------------------------------------------------------------*/
@@ -423,6 +462,43 @@ input[type="submit"] {
     border-color: #aaa #bbb #bbb;
     -webkit-box-shadow: inset 0 -1px 0 rgba(255, 255, 255, 0.5), inset 0 2px 5px rgba(0, 0, 0, 0.15);
             box-shadow: inset 0 -1px 0 rgba(255, 255, 255, 0.5), inset 0 2px 5px rgba(0, 0, 0, 0.15); }
+  button.default,
+  input[type="button"].default,
+  input[type="reset"].default,
+  input[type="submit"].default {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    justify-items: center;
+    margin: 0;
+    padding: 0;
+    min-height: 2rem;
+    border-radius: 1rem;
+    background-color: transparent;
+    border: 1px solid #f3a914;
+    -webkit-box-shadow: none;
+            box-shadow: none;
+    text-shadow: none;
+    -webkit-transition: 0.3s;
+    transition: 0.3s; }
+    button.default:hover,
+    input[type="button"].default:hover,
+    input[type="reset"].default:hover,
+    input[type="submit"].default:hover {
+      background-color: rgba(255, 255, 255, 0.24); }
+      button.default:hover a,
+      input[type="button"].default:hover a,
+      input[type="reset"].default:hover a,
+      input[type="submit"].default:hover a {
+        color: white; }
+    button.default a,
+    input[type="button"].default a,
+    input[type="reset"].default a,
+    input[type="submit"].default a {
+      padding: .5rem 1rem; }
 
 .filter-txt input[type="radio"] {
   display: none; }
@@ -483,7 +559,9 @@ textarea {
 /* Links */
 a {
   color: #474747;
-  text-decoration: none; }
+  text-decoration: none;
+  -webkit-transition: 0.3s;
+  transition: 0.3s; }
   a:visited {
     color: purple; }
   a:hover, a:focus, a:active {
@@ -504,6 +582,11 @@ a {
     border-radius: .5rem;
     color: white;
     line-height: 1rem; }
+  .container-contact a {
+    color: white;
+    text-decoration: underline; }
+    .container-contact a:hover, .container-contact a:focus, .container-contact a:active {
+      color: #6d6d6d; }
 
 /* Menus */
 .main-navigation {
@@ -1009,6 +1092,29 @@ object {
         width: 100%;
         margin: 0;
         bottom: .375rem; }
+  .home .visible.section-front-contact {
+    background: -webkit-gradient(linear, left top, left bottom, from(black), to(#2b2b2b));
+    background: linear-gradient(to bottom, black, #2b2b2b); }
+    .home .visible.section-front-contact:after {
+      position: absolute;
+      content: "";
+      width: 100%;
+      height: 2px;
+      bottom: -1px;
+      left: 0;
+      background-color: #2b2b2b; }
+    .home .visible.section-front-contact .header-meta {
+      background-color: transparent; }
+      .home .visible.section-front-contact .header-meta:after {
+        display: none; }
+      .home .visible.section-front-contact .header-meta .section-title:after {
+        background-color: #f3a914; }
+    .home .visible.section-front-contact .container-contact {
+      padding: 1.25rem 1.875rem;
+      padding-top: 0; }
+      .home .visible.section-front-contact .container-contact .contact-title {
+        margin: 0;
+        margin-bottom: 32px; }
 
 .ic_mouse_body {
   position: relative;

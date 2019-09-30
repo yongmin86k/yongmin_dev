@@ -7,6 +7,7 @@
 a {
 	color: $color__link;
 	text-decoration: none;
+	transition: $ani__time-default;
 
 	&:visited {
 		color: $color__link-visited;
@@ -42,6 +43,16 @@ a {
 
 	&.read-more-link {
 		@extend a.work-link;
+	}
+
+	.container-contact & {
+		color: $white;
+		text-decoration: underline;
+		&:hover,
+		&:focus,
+		&:active {
+			color: $color__link-hover;
+		}
 	}
 }
 

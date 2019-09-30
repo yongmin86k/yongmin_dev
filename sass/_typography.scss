@@ -10,6 +10,25 @@ textarea {
 	color: $color__text-main;
 	font-family: $font__main;
 	line-height: $font__line-height-body;
+	box-sizing: border-box;
+}
+
+button {
+	&.default {
+		a  {
+			font-size: .75rem;
+			font-weight: 400;
+			letter-spacing: .125rem;
+			text-decoration: none;
+			text-transform: uppercase;
+		}
+	}
+}
+
+section {
+	&.section-front-contact {
+		color: $white;
+	}
 }
 
 /* Headings */
@@ -30,6 +49,11 @@ h3 {
 		.section-front-about-me & {
 			margin-bottom: 0
 		}
+
+		.section-front-contact & {
+			margin-bottom: 0;
+			color: $yellow;
+		}
 	}
 	&.work-title {
 		font-size: 2rem;
@@ -44,12 +68,22 @@ h4 {
 		letter-spacing: 1.6px;
 		text-transform: uppercase;
 	}
+
+	.section-front-contact & {
+		color: $white;
+		font-size: 20px;
+		font-weight: 300;
+		line-height: 28px;
+		em {
+			font-weight: 400;
+		}
+	}
 }
 
 /* Copy */
 
 p {
-	margin-bottom: $base__space-unit;
+	margin: $base__space-unit 0;
 
 	&.work-date {
 		font-size: 0.75rem;
@@ -89,6 +123,13 @@ p {
 		font-size: .5rem;
 		font-weight: 700;
 		text-align: center;
+	}
+
+	.container-contact & {
+		font-size: .75rem;
+		font-weight: 300;
+		line-height: 1rem;
+		margin: .5rem 0;
 	}
 } // end p
 
@@ -135,4 +176,12 @@ mark, ins {
 
 big {
 	font-size: 125%;
+}
+
+footer {
+	color: $white;
+	a {
+		font-size: .75rem;
+		color: $white;
+	}
 }

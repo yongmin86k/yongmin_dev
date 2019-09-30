@@ -29,6 +29,31 @@ input[type="submit"] {
 		border-color: #aaa #bbb #bbb;
 		box-shadow: inset 0 -1px 0 rgba(255, 255, 255, 0.5), inset 0 2px 5px rgba(0, 0, 0, 0.15);
 	}
+
+	&.default {
+		display: flex;
+		align-items: center;
+		justify-items: center;
+		margin: 0; padding: 0;
+		min-height: 2rem;
+		border-radius: 1rem;
+		background-color: transparent;
+		border: 1px solid $yellow;
+		box-shadow: none;
+		text-shadow: none;
+		transition: $ani__time-default;
+
+		&:hover {
+			background-color: rgba(255,255,255,0.24);
+			a {
+				color: $white;
+			}
+		}
+
+		a  {
+			padding: .5rem 1rem;
+		}
+	}
 }
 
 // Front-page
