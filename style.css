@@ -404,7 +404,8 @@ input[type="submit"] {
   color: #474747;
   line-height: 1;
   padding: .6rem 1rem .4rem;
-  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.8); }
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.8);
+  cursor: pointer; }
   button:hover,
   input[type="button"]:hover,
   input[type="reset"]:hover,
@@ -426,27 +427,26 @@ input[type="submit"] {
 .filter-txt input[type="radio"] {
   display: none; }
 
-.filter-txt label {
-  display: block;
-  height: 24px;
-  line-height: 24px;
-  padding: 0 .5rem;
-  font-size: 0.75rem;
-  border: 1px solid #474747; }
-
-.filter-txt:first-child label {
-  border-top-left-radius: 12px;
-  border-bottom-left-radius: 12px;
-  border-right: none; }
-
-.filter-txt:last-child label {
-  border-top-right-radius: 12px;
-  border-bottom-right-radius: 12px;
-  border-left: none; }
-
-.filter-txt.active label {
-  background-color: #474747;
-  color: white; }
+label {
+  cursor: pointer; }
+  .filter-txt label {
+    display: block;
+    height: 24px;
+    line-height: 24px;
+    padding: 0 .5rem;
+    font-size: 0.75rem;
+    border: 1px solid #474747; }
+  .filter-txt:first-child label {
+    border-top-left-radius: 12px;
+    border-bottom-left-radius: 12px;
+    border-right: none; }
+  .filter-txt:last-child label {
+    border-top-right-radius: 12px;
+    border-bottom-right-radius: 12px;
+    border-left: none; }
+  .filter-txt.active label {
+    background-color: #474747;
+    color: white; }
 
 /* Fields */
 input[type="text"],
@@ -555,18 +555,22 @@ a {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
+  -webkit-box-pack: flex-strt;
+      -ms-flex-pack: flex-strt;
+          justify-content: flex-strt;
   font-family: "Cormorant Unicase", serif;
   text-transform: lowercase; }
+  .main-navigation ul li {
+    padding-right: 1.5rem;
+    letter-spacing: .8px; }
+    .main-navigation ul li:last-child {
+      padding-right: 0; }
   .main-navigation ul a {
     text-decoration: none;
     color: white;
     opacity: .5; }
     .main-navigation ul a[aria-current='page'] {
       opacity: 1; }
-  .main-navigation ul li {
-    letter-spacing: .8px; }
 
 /* Small menu. */
 /*--------------------------------------------------------------
