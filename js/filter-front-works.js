@@ -19,7 +19,7 @@
         $.when(
             appendWorkTaxonomies(),
             appendRoleTaxonomies()
-        ).done(function () {
+        ).then(function () {
             fetchWordPressData();
             $obj.on('click', 'input', function(){
                 fetchWordPressData( $(this) );
