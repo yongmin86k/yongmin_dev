@@ -203,11 +203,10 @@
                 if (data.work_taxonomies.length > 0) {
 
                     data.work_taxonomies.forEach(function (value) {
-                        let checkValue, $thisID, $thisParentID, $thisLink, $thisName;
-
-                        checkValue = workTaxonomies.find(function(workTaxonomy){
+                        let checkValue = workTaxonomies.find(function(workTaxonomy){
                             return workTaxonomy.id === value;
                         });
+                        let $thisID, $thisParentID, $thisLink, $thisName;
 
                         $thisID = checkValue.id;
                         $thisLink = checkValue.link;
