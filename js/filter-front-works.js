@@ -2,6 +2,8 @@
     const animationTime = 700;
     let workTaxonomies = [],
         workRoles = [];
+        appendWorkTaxonomies();
+        appendRoleTaxonomies();
 
     // document ready
     $(function(){
@@ -16,14 +18,9 @@
         });
 
         // Fetch localized rest wp-api
-        $.when(
-            appendWorkTaxonomies(),
-            appendRoleTaxonomies()
-        ).then(function () {
-            fetchWordPressData();
-            $obj.on('click', 'input', function(){
-                fetchWordPressData( $(this) );
-            });
+        fetchWordPressData();
+        $obj.on('click', 'input', function(){
+            fetchWordPressData( $(this) );
         });
 
         }
@@ -178,28 +175,35 @@
                 $(`#ymk-works-${index}`).fadeIn(animationTime);
 
                 // Create roles of each latest work
+
                 if (data.work_roles.length > 0) {
 
                     data.work_roles.forEach(function (value) {
                         let checkValue, $thisID, $thisLink, $thisName;
 
-                        checkValue = workRoles.find(function(workRole){
-                            if (workRole.id){
-                                return workRole.id === value
-                            }
-                        });
+                        if (workRoles.length > 0) {
 
-                        $thisID = checkValue.id;
-                        $thisLink = checkValue.link;
-                        $thisName = checkValue.name;
+                            checkValue = workRoles.find(function(workRole){
+                                if (workRole.id){
+                                    return workRole.id === value
+                                }
+                            });
 
-                        $(`#ymk-works-${index}`).find('.role-container').append(`
-                            <p class="role-element role-tag-id-${$thisID}">
-                                <a class="role-link" href="${$thisLink}">
-                                    ${$thisName}
-                                </a>
-                            </p>                        
-                        `); // end append()
+                            $thisID = checkValue.id;
+                            $thisLink = checkValue.link;
+                            $thisName = checkValue.name;
+
+                            $(`#ymk-works-${index}`).find('.role-container').append(`
+                                <p class="role-element role-tag-id-${$thisID}">
+                                    <a class="role-link" href="${$thisLink}">
+                                        ${$thisName}
+                                    </a>
+                                </p>                        
+                            `); // end append()
+
+                        } else {
+                            appendRoleTaxonomies();
+                        } // endif(workRoles.length)
 
                     }); // endforEach(data.work_roles)
                 } // endif(data.work_roles)
@@ -210,38 +214,44 @@
                     data.work_taxonomies.forEach(function (value) {
                         let checkValue, $thisID, $thisParentID, $thisLink, $thisName;
 
-                        checkValue = workTaxonomies.find(function(workTaxonomy){
-                            if (workTaxonomy.id){
-                                return workTaxonomy.id === value;
-                            }
-                        });
+                        if ( workTaxonomies.length > 0) {
+                            checkValue = workTaxonomies.find(function(workTaxonomy){
+                                if (workTaxonomy.id){
+                                    return workTaxonomy.id === value;
+                                }
+                            });
 
-                        $thisID = checkValue.id;
-                        $thisLink = checkValue.link;
-                        $thisName = checkValue.name;
+                            $thisID = checkValue.id;
+                            $thisLink = checkValue.link;
+                            $thisName = checkValue.name;
 
-                        if ( checkValue.parent === 0 ){
-                        // Create tag container and add the first tag
-                            $(`#ymk-works-${index}`).find('.tag-meta').append(`
-                                <div class='tag-container parent-tag-id-${$thisID}'>
+                            if ( checkValue.parent === 0 ){
+                            // Create tag container and add the first tag
+                                $(`#ymk-works-${index}`).find('.tag-meta').append(`
+                                    <div class='tag-container parent-tag-id-${$thisID}'>
+                                        <p class="tag-element child-tag-id-${$thisID}">
+                                            <a class="tag-link" href="${$thisLink}">
+                                                ${$thisName}
+                                            </a>
+                                        </p>
+                                    </div>
+                                `);
+                            } else {
+                            // Add a tag relevant to its parent tag
+                                $thisParentID = checkValue.parent;
+                                $(`#ymk-works-${index}`).find(`.parent-tag-id-${$thisParentID}`).append(`
                                     <p class="tag-element child-tag-id-${$thisID}">
                                         <a class="tag-link" href="${$thisLink}">
                                             ${$thisName}
                                         </a>
                                     </p>
-                                </div>
-                            `);
+                                `);
+                            } // endif(checkValue.parent)
+
                         } else {
-                        // Add a tag relevant to its parent tag
-                            $thisParentID = checkValue.parent;
-                            $(`#ymk-works-${index}`).find(`.parent-tag-id-${$thisParentID}`).append(`
-                                <p class="tag-element child-tag-id-${$thisID}">
-                                    <a class="tag-link" href="${$thisLink}">
-                                        ${$thisName}
-                                    </a>
-                                </p>
-                            `);
-                        } // endif(checkValue.parent)
+                            appendWorkTaxonomies();
+                        } // endif(workTaxonomies.length)
+
                     }); // endforEach(data.work_taxonomies)
                 } // endif(data.work_taxonomies.length)
 
