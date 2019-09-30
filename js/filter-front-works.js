@@ -2,9 +2,34 @@
     const animationTime = 700;
     let workTaxonomies = [],
         workRoles = [];
-    appendWorkTaxonomies();
-    appendRoleTaxonomies();
 
+    // document ready
+    $(function(){
+
+        if ( $('.filter-txt').length > 0 ){
+            let $obj = $('.filter-txt');
+
+        // Custom styling for input[t=radio] -> $works
+        activateFilterStyles($obj);
+        $obj.on('click', 'label', function(){
+            activateFilterStyles($obj, $(this));
+        });
+
+        // Fetch localized rest wp-api
+        $.when(
+            appendWorkTaxonomies(),
+            appendRoleTaxonomies()
+        ).done(function () {
+            fetchWordPressData();
+            $obj.on('click', 'input', function(){
+                fetchWordPressData( $(this) );
+            });
+        });
+
+        }
+
+    }); // end document ready
+    
     // Retrieve names of work_taxonomies
     function appendWorkTaxonomies(){
         let taxonomies = 'work_taxonomies';
@@ -38,28 +63,6 @@
         });
 
     }
-
-    // document ready
-    $(function(){
-
-        if ( $('.filter-txt').length > 0 ){
-            let $obj = $('.filter-txt');
-
-        // Custom styling for input[t=radio] -> $works
-            activateFilterStyles($obj);
-            $obj.on('click', 'label', function(){
-                activateFilterStyles($obj, $(this));
-            });
-
-        // Fetch localized rest wp-api
-            fetchWordPressData();
-            $obj.on('click', 'input', function(){
-                fetchWordPressData( $(this) );
-             });
-
-        }
-
-    }); // end document ready
 
     // Add 'active' class to input[t=radio] -> checked
     function activateFilterStyles($obj, $this = null){
