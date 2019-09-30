@@ -5,6 +5,40 @@
     appendWorkTaxonomies();
     appendRoleTaxonomies();
 
+    // Retrieve names of work_taxonomies
+    function appendWorkTaxonomies(){
+        let taxonomies = 'work_taxonomies';
+        $.ajax({
+            method: 'get',
+            url: `${ymk_api_works.rest_url}wp/v2/${taxonomies}`,
+        }).always(function () {
+
+        }).fail(function () {
+
+        }).done(function (result) {
+            workTaxonomies = result;
+            workTaxonomies.sort( (a, b) => {
+                return a.parent - b.parent
+            });
+        })
+    }
+
+    // Retrieve names of work_roles
+    function appendRoleTaxonomies(){
+        let taxonomies = 'work_roles';
+        $.ajax({
+            method: 'get',
+            url: `${ymk_api_works.rest_url}wp/v2/${taxonomies}`,
+        }).always(function () {
+
+        }).fail(function () {
+
+        }).done(function (result) {
+            workRoles = result;
+        });
+
+    }
+
     // document ready
     $(function(){
 
@@ -43,40 +77,6 @@
                 }
             });
         }
-    }
-
-    // Retrieve names of work_taxonomies
-    function appendWorkTaxonomies(){
-        let taxonomies = 'work_taxonomies';
-        $.ajax({
-            method: 'get',
-            url: `${ymk_api_works.rest_url}wp/v2/${taxonomies}`,
-        }).always(function () {
-
-        }).fail(function () {
-
-        }).done(function (result) {
-            workTaxonomies = result;
-            workTaxonomies.sort( (a, b) => {
-                return a.parent - b.parent
-            });
-        })
-    }
-
-    // Retrieve names of work_roles
-    function appendRoleTaxonomies(){
-        let taxonomies = 'work_roles';
-        $.ajax({
-            method: 'get',
-            url: `${ymk_api_works.rest_url}wp/v2/${taxonomies}`,
-        }).always(function () {
-
-        }).fail(function () {
-
-        }).done(function (result) {
-            workRoles = result;
-        });
-
     }
 
     // Retrieve and add feature images of latest works
