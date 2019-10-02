@@ -33,6 +33,7 @@
         $.ajax({
             method: 'get',
             url: `${ymk_api_works.rest_url}wp/v2/${taxonomies}`,
+            timeout: 3000,
         }).always(function () {
 
         }).fail(function () {
@@ -51,6 +52,7 @@
         $.ajax({
             method: 'get',
             url: `${ymk_api_works.rest_url}wp/v2/${taxonomies}`,
+            timeout: 3000,
         }).always(function () {
 
         }).fail(function () {
@@ -84,6 +86,7 @@
         $.ajax({
             method: 'get',
             url: `${ymk_api_works.rest_url}wp/v2/media/${imgID}`,
+            timeout: 3000,
         }).always(function () {
 
         }).fail(function (err) {
@@ -117,6 +120,7 @@
         $.ajax({
             method: 'get',
             url: strURI,
+            timeout: 3000,
         }).always( function(){
         }).fail(function(err){
             console.log(err);

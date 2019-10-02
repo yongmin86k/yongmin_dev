@@ -54,6 +54,21 @@ input[type="submit"] {
 			padding: .5rem 1rem;
 		}
 	}
+
+	&.black {
+		@extend .default;
+		background-color: $black_default;
+		border: none;
+		box-shadow: 0 2px 8px 0 rgba(0,0,0,0.28);
+		a {
+			color: $white;
+		}
+		&:hover {
+			background-color: $black_default;
+			border: none;
+			opacity: .4;
+		}
+	}
 }
 
 // Front-page

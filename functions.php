@@ -86,7 +86,7 @@ function ymk_dev_scripts() {
 	wp_enqueue_style('google-fonts', 'https://fonts.googleapis.com/css?family=Cormorant+Unicase:600|Lato:100,100i,300,300i,400,400i,700,700i,900,900i&display=swap');
 	wp_enqueue_style( 'ymk-dev-style', get_stylesheet_uri() );
 
-	wp_enqueue_script('font-awesome', 'https://kit.fontawesome.com/8ddc296b1b.js', '', '20190923', false);
+	// wp_enqueue_script('font-awesome', 'https://kit.fontawesome.com/8ddc296b1b.js', '', '20190923', false);
 
 	wp_enqueue_script( 'ymk-dev-navigation', get_template_directory_uri() . '/build/js/navigation.min.js', array(), '20151215', true );
 	wp_enqueue_script( 'ymk-dev-skip-link-focus-fix', get_template_directory_uri() . '/build/js/skip-link-focus-fix.min.js', array(), '20151215', true );

@@ -38,6 +38,29 @@ h1, h2, h3, h4, h5, h6 {
 	color: $black_header;
 }
 
+
+body {
+	&:not(.home){
+		h2, h3 {
+			font-weight: 400;
+			line-height: 1.4;
+			letter-spacing: -0.8px;
+		}
+		h2 {
+			font-size: 2rem;
+		}
+
+		h3 {
+			font-size: 1.75rem;
+		}
+
+		p.page_date {
+			font-size : .75rem;
+		}
+
+	} // end body:not(.home)
+}
+
 h3 {
 	font-weight: 600;
 
@@ -138,6 +161,23 @@ dfn, cite, em, i {
 	.about-me-description-para & {
 		font-weight: 400;
 		letter-spacing: 0;
+	}
+
+}
+em {
+	&.em-quote {
+		display: block;
+	}
+}
+cite {
+	&.small {
+		display: block;
+		font-size: .75rem;
+		font-style: normal;
+		line-height: 1.5;
+	}
+	&.line-through {
+		text-decoration: line-through;
 	}
 }
 
