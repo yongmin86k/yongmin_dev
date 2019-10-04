@@ -893,7 +893,8 @@ body:not(.home) .site {
 
 body:not(.home) .site-main {
   padding: 1.25rem 1.875rem;
-  padding-top: 4rem; }
+  padding-top: 4rem;
+  padding-bottom: 4rem; }
 
 body:not(.home) h2.section-title {
   margin: 0;
