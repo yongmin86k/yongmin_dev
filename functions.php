@@ -112,6 +112,10 @@ function ymk_dev_scripts() {
 		'rest_url' => esc_url_raw( rest_url() ),
 		'home_url' => esc_url_raw( home_url() )
 	));
+	wp_localize_script('ymk-dev-script-works-filter', 'ymk_api_works', array(
+		'rest_url' => esc_url_raw( rest_url() ),
+		'home_url' => esc_url_raw( home_url() )
+	));
 
 }
 add_action( 'wp_enqueue_scripts', 'ymk_dev_scripts' );

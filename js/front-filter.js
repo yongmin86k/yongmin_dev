@@ -111,10 +111,10 @@
             post_type = 'work_posts';
 
         if ( $input === undefined || $input.val() === 'all' ) {
-            strURI = `${ymk_api_works.rest_url}wp/v2/${post_type}`;
+            strURI = `${ymk_api_works.rest_url}wp/v2/${post_type}?per_page=4`;
         } else {
             filterByID = $input.val();
-            strURI = `${ymk_api_works.rest_url}wp/v2/${post_type}?work_taxonomies=${filterByID}`;
+            strURI = `${ymk_api_works.rest_url}wp/v2/${post_type}?work_taxonomies=${filterByID}&per_page=4`;
         }
 
         $.ajax({

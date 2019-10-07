@@ -27,7 +27,7 @@ add_filter( 'body_class', 'ymk_dev_body_classes' );
  */
 function filter_rest_work_posts_query($query_vars) {
 
-	$query_vars['posts_per_page'] = 4;
+	// $query_vars['posts_per_page'] = 4;
 
 	$query_vars['meta_query'] = array(
 		'relation' => 'AND',

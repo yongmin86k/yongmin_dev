@@ -18,22 +18,22 @@ get_header(); ?>
                 <i class="fas fa-filter"></i>
                 <p>Filter by</p>
             </div>
-            <label class="filter-by">
-                <input type="checkbox" class="by-date">
+            <label class="filter-by active">
+                <input type="radio" class="by-date" name="filter-works" checked value="recent">
                 <span class="ic-filter">
                     <i class="fas fa-sort-numeric-down-alt"></i>
                 </span>
                 <p>Recent</p>
             </label>
             <label class="filter-by">
-                <input type="checkbox" class="by-name">
+                <input type="radio" class="by-name" name="filter-works" value="asc">
                 <span class="ic-filter">
                     <i class="fas fa-sort-alpha-down"></i>
                 </span>
                 <p>Ascending</p>
             </label>
 
-            <label class="filter-by" for="filter-work-categories">
+            <label class="filter-by active" for="filter-work-categories">
 	            <?php
 	            $q_work_types = array(
 		            'taxonomy' => 'work_taxonomies',
@@ -63,28 +63,27 @@ get_header(); ?>
         </section>
 
 		<section id="contents-works-page-projects" class="section-works-projects">
-
-<!--            <div class="select-categories">-->
-<!--                -->
-<!--            </div>-->
 		<?php
 			$works_lists = array(
 				'post_type' => 'work_posts',
-				'posts_per_page' => 16,
+				'posts_per_page' => -1,
 			);
 			$works = new WP_Query($works_lists);
 		?>
-
+<!---->
 		<?php if ( $works->have_posts() ) :?>
-		<?php while ( $works->have_posts() ): $works->the_post();?>
+            <div class="container-works-projects">
 
-			<?php the_title();?>
-			<?php // echo get_permalink(); ?>
-
-            <img src="<?php echo get_the_post_thumbnail_url();?>">
-
-		<?php endwhile;?>
-		<?php the_posts_navigation(); ?>
+            </div>
+<!--		--><?php //while ( $works->have_posts() ): $works->the_post();?>
+<!---->
+<!--			--><?php //the_title();?>
+<!--			--><?php //// echo get_permalink(); ?>
+<!---->
+<!--            <img src="--><?php //echo get_the_post_thumbnail_url();?><!--">-->
+<!---->
+<!--		--><?php //endwhile;?>
+<!--		--><?php //the_posts_navigation(); ?>
 		<?php wp_reset_postdata(); ?>
 
 		<?php else : ?>

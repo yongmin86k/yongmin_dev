@@ -662,7 +662,7 @@ body {
   .section-works-filters {
     position: relative;
     display: flex;
-    margin-bottom: 1rem;
+    margin-bottom: 3rem;
     justify-content: center;
 
     p {
@@ -678,6 +678,7 @@ body {
         justify-content: center;
         flex-direction: column;
         margin-right: 1rem;
+        opacity: .36;
 
         i {
           display: flex;
@@ -707,7 +708,13 @@ body {
         justify-content: center;
         flex-direction: column;
         margin-right: 1rem;
-        min-width: 3rem;
+        min-width: 3.125rem;
+        opacity: .36;
+        transition: $ani__time-default;
+
+        &.active {
+          opacity: 1;
+        }
 
         &:last-child {
           margin-right: 0;
@@ -725,7 +732,7 @@ body {
           cursor: pointer;;
         }
 
-        input[type='checkbox'] {
+        input[type='radio'] {
           display: none;
         }
 
