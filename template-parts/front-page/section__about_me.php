@@ -3,7 +3,7 @@
 	<div class="about-me-gradation-bg"></div>
 	<div class="header-meta">
 		<h3 class="section-title">
-			<a href="<?php echo esc_url( home_url( '/about-me' ) ) ;?>">
+			<a href="<?php echo esc_url( home_url( '/about' ) ) ;?>">
 				About me
 			</a>
 		</h3>
@@ -19,7 +19,7 @@
     </div>
 
     <div class="read-more-container">
-        <a class="read-more-link" href="<?php echo esc_url( home_url( '/about-me' ) ) ;?>">
+        <a class="read-more-link" href="<?php echo esc_url( home_url( '/about' ) ) ;?>">
             More about me —>
         </a>
     </div>
