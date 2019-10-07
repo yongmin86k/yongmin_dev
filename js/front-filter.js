@@ -32,7 +32,7 @@
         let taxonomies = 'work_taxonomies';
         $.ajax({
             method: 'get',
-            url: `${ymk_api_works.rest_url}wp/v2/${taxonomies}`,
+            url: `${ymk_api_works.rest_url}wp/v2/${taxonomies}?per_page=100`,
             timeout: 3000,
         }).always(function () {
 
@@ -51,7 +51,7 @@
         let taxonomies = 'work_roles';
         $.ajax({
             method: 'get',
-            url: `${ymk_api_works.rest_url}wp/v2/${taxonomies}`,
+            url: `${ymk_api_works.rest_url}wp/v2/${taxonomies}?per_page=100`,
             timeout: 3000,
         }).always(function () {
 
@@ -164,7 +164,7 @@
                                 <p class="work-date">${date_parsed}</p>
                                 <h3 class="work-title">${title}</h3>
                                 <a class="work-link" href="${url}">
-                                    Read more
+                                    Show details
                                 </a>
                             </div>
                             <div class="role-meta">

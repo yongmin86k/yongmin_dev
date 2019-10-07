@@ -1153,12 +1153,13 @@ body:not(.home) hr {
     display: flex;
     -webkit-box-align: center;
         -ms-flex-align: center;
-            align-items: center; }
-    .home .visible .tag-container:first-child {
-      margin-bottom: .5rem; }
+            align-items: center;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap; }
   .home .visible .tag-element {
     margin: 0;
-    margin-right: .25rem; }
+    margin-right: .25rem;
+    margin-bottom: .5rem; }
   .home .visible .about-me-gradation-bg {
     position: absolute;
     top: 0;
