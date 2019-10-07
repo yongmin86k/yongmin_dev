@@ -153,6 +153,17 @@ p {
 		font-weight: 300;
 		line-height: 1rem;
 	}
+
+	.filter-info & {
+		font-size: .625rem;
+		text-align: center;
+		overflow: visible;
+		white-space: nowrap;
+		text-transform: capitalize;
+	}
+	.filter-by & {
+		font-size: .625rem;
+	}
 } // end p
 
 dfn, cite, em, i {
@@ -222,5 +233,19 @@ footer {
 	a {
 		font-size: .75rem;
 		color: $white;
+	}
+}
+
+.filter {
+	 &-info {
+		color: $grey;
+	}
+	&-by {
+		i, select {color: $white;}
+		select {
+			font-size: .75rem;
+			text-align: center;
+			text-align-last: center;
+		}
 	}
 }

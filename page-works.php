@@ -9,38 +9,64 @@ get_header(); ?>
 
 <div id="primary" class="content-area">
 	<main id="main" class="site-main" role="main">
-		<h2 class="section-title">
+		<h2 class="section-title filter-under">
 			<?php the_title();?>
 		</h2>
 
+        <section id="works-filters" class="section-works-filters">
+            <div class="filter-info">
+                <i class="fas fa-filter"></i>
+                <p>Filter by</p>
+            </div>
+            <label class="filter-by">
+                <input type="checkbox" class="by-date">
+                <span class="ic-filter">
+                    <i class="fas fa-sort-numeric-down-alt"></i>
+                </span>
+                <p>Recent</p>
+            </label>
+            <label class="filter-by">
+                <input type="checkbox" class="by-name">
+                <span class="ic-filter">
+                    <i class="fas fa-sort-alpha-down"></i>
+                </span>
+                <p>Ascending</p>
+            </label>
+
+            <label class="filter-by" for="filter-work-categories">
+	            <?php
+	            $q_work_types = array(
+		            'taxonomy' => 'work_taxonomies',
+		            'hide_empty' => false,
+	            );
+	            $work_types = get_terms($q_work_types);
+	            // var_dump($work_types);
+	            ?>
+
+                <select id="select-work-categories">
+                    <option value="all">All</option>
+
+			        <?php foreach ($work_types as $work_type) :
+				        $value = $work_type -> slug;
+				        $name = $work_type -> name;
+				        ?>
+
+                        <option value="<?php echo $value ;?>">
+					        <?php echo $name; ?>
+                        </option>
+
+			        <?php endforeach;?>
+                </select>
+                <p>Categories</p>
+            </label>
+
+        </section>
+
 		<section id="contents-works-page-projects" class="section-works-projects">
-		<?php
-			$q_work_types = array(
-				'taxonomy' => 'work_taxonomies',
-				'hide_empty' => false,
-	        );
-			$work_types = get_terms($q_work_types);
-			// var_dump($work_types);
-        ?>
-		<div class="select-categories">
-			<label for="select-work-categories">
 
-			</label>
-			<select id="select-work-categories">
-				<option value="all">All</option>
-
-				<?php foreach ($work_types as $work_type) :
-					$value = $work_type -> slug;
-					$name = $work_type -> name;
-				?>
-
-					<option value="<?php echo $value ;?>">
-						<?php echo $name; ?>
-					</option>
-
-				<?php endforeach;?>
-			</select>
-		</div>
+<!--            <div class="select-categories">-->
+<!--                -->
+<!--            </div>-->
 		<?php
 			$works_lists = array(
 				'post_type' => 'work_posts',

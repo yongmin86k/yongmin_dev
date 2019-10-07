@@ -30,7 +30,11 @@ body {
     h2.section-title {
       margin: 0;
       margin-bottom: 2rem;
+      &.filter-under {
+        margin-bottom: 1rem;
+      }
     }
+
     h3.section-title {
       margin: 0;
       margin-bottom: 1rem;
@@ -652,3 +656,94 @@ body {
   }
 
 }
+
+/* Works page */
+.page-id-13  {
+
+  .section-works-filters {
+    position: relative;
+    display: flex;
+    margin-bottom: 1rem;
+    justify-content: center;
+
+    p {
+      position: relative;
+      margin: 0;
+    }
+
+    .filter {
+      &-info {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        margin-right: 1rem;
+
+        i {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          position: relative;
+          width: 2rem;
+          height: 2rem;
+        }
+
+        &:after {
+          position: absolute;
+          top:0;
+          right: -.4rem;
+          content: '';
+          background-color: $grey;
+          width: 1px;
+          height: 72%;
+          opacity: .5;
+        }
+      } // end .filter-info
+
+      &-by {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        margin-right: 1rem;
+        min-width: 3rem;
+
+        &:last-child {
+          margin-right: 0;
+        }
+
+        .ic-filter {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          position: relative;
+          width: 2rem;
+          height: 2rem;
+          background-color: $black_default;
+          border-radius: 50%;
+          cursor: pointer;;
+        }
+
+        input[type='checkbox'] {
+          display: none;
+        }
+
+        select {
+          position: relative;
+          max-width: 5rem;
+          height: 2rem;
+          background-color: $black_default;
+          border: none;
+          border-radius: .25rem;
+          padding: 0 .5rem;
+          cursor: pointer;
+
+        }
+      } // end .filter-by
+    } // end .filter
+
+  } // end .section-works-filters
+}
+//2.25rem

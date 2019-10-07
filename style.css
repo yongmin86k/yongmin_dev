@@ -329,6 +329,14 @@ p {
     font-size: .75rem;
     font-weight: 300;
     line-height: 1rem; }
+  .filter-info p {
+    font-size: .625rem;
+    text-align: center;
+    overflow: visible;
+    white-space: nowrap;
+    text-transform: capitalize; }
+  .filter-by p {
+    font-size: .625rem; }
 
 dfn, cite, em, i {
   font-style: italic; }
@@ -382,6 +390,17 @@ footer {
   footer a {
     font-size: .75rem;
     color: white; }
+
+.filter-info {
+  color: #999999; }
+
+.filter-by i, .filter-by select {
+  color: white; }
+
+.filter-by select {
+  font-size: .75rem;
+  text-align: center;
+  text-align-last: center; }
 
 /*--------------------------------------------------------------
 # Elements
@@ -899,6 +918,8 @@ body:not(.home) .site-main {
 body:not(.home) h2.section-title {
   margin: 0;
   margin-bottom: 2rem; }
+  body:not(.home) h2.section-title.filter-under {
+    margin-bottom: 1rem; }
 
 body:not(.home) h3.section-title {
   margin: 0;
@@ -1348,6 +1369,104 @@ body:not(.home) hr {
     margin: 0; }
   .page-id-17 .section-about-contact .container-contact-content > a {
     text-decoration: underline; }
+
+/* Works page */
+.page-id-13 .section-works-filters {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-bottom: 1rem;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center; }
+  .page-id-13 .section-works-filters p {
+    position: relative;
+    margin: 0; }
+  .page-id-13 .section-works-filters .filter-info {
+    position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    margin-right: 1rem; }
+    .page-id-13 .section-works-filters .filter-info i {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-align: center;
+          -ms-flex-align: center;
+              align-items: center;
+      -webkit-box-pack: center;
+          -ms-flex-pack: center;
+              justify-content: center;
+      position: relative;
+      width: 2rem;
+      height: 2rem; }
+    .page-id-13 .section-works-filters .filter-info:after {
+      position: absolute;
+      top: 0;
+      right: -.4rem;
+      content: '';
+      background-color: #999999;
+      width: 1px;
+      height: 72%;
+      opacity: .5; }
+  .page-id-13 .section-works-filters .filter-by {
+    position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    margin-right: 1rem;
+    min-width: 3rem; }
+    .page-id-13 .section-works-filters .filter-by:last-child {
+      margin-right: 0; }
+    .page-id-13 .section-works-filters .filter-by .ic-filter {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-align: center;
+          -ms-flex-align: center;
+              align-items: center;
+      -webkit-box-pack: center;
+          -ms-flex-pack: center;
+              justify-content: center;
+      position: relative;
+      width: 2rem;
+      height: 2rem;
+      background-color: #474747;
+      border-radius: 50%;
+      cursor: pointer; }
+    .page-id-13 .section-works-filters .filter-by input[type='checkbox'] {
+      display: none; }
+    .page-id-13 .section-works-filters .filter-by select {
+      position: relative;
+      max-width: 5rem;
+      height: 2rem;
+      background-color: #474747;
+      border: none;
+      border-radius: .25rem;
+      padding: 0 .5rem;
+      cursor: pointer; }
 
 .ic_mouse_body {
   position: relative;
