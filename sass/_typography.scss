@@ -9,24 +9,187 @@ select,
 textarea {
 	color: $color__text-main;
 	font-family: $font__main;
-	@include font-size(1);
 	line-height: $font__line-height-body;
+	box-sizing: border-box;
+}
+
+button {
+	&.default {
+		a  {
+			font-size: .75rem;
+			font-weight: 400;
+			letter-spacing: .125rem;
+			text-decoration: none;
+			text-transform: uppercase;
+		}
+	}
+}
+
+section {
+	&.section-front-contact {
+		color: $white;
+	}
 }
 
 /* Headings */
 
 h1, h2, h3, h4, h5, h6 {
 	clear: both;
+	color: $black_header;
+}
+
+
+body {
+	&:not(.home){
+		h2, h3 {
+			font-weight: 400;
+			line-height: 1.4;
+			letter-spacing: -0.8px;
+		}
+		h2 {
+			font-size: 2rem;
+		}
+
+		h3 {
+			font-size: 1.75rem;
+		}
+
+		p.page_date {
+			font-size : .75rem;
+		}
+
+	} // end body:not(.home)
+}
+
+h3 {
+	font-weight: 600;
+
+	&.section-title {
+		font-size: 0.75rem;
+		margin: 0;
+		margin-bottom: 1rem;
+
+		.section-front-about-me & {
+			margin-bottom: 0
+		}
+
+		.section-front-contact & {
+			margin-bottom: 0;
+			color: $yellow;
+		}
+	}
+	&.work-title {
+		font-size: 2rem;
+		line-height: 2.5rem;
+	}
+}
+
+h4 {
+	&.sub-title {
+		font-size: 0.75rem;
+		font-weight: 800;
+		letter-spacing: 1.6px;
+		text-transform: uppercase;
+	}
+
+	.section-front-contact & {
+		color: $white;
+		font-size: 20px;
+		font-weight: 300;
+		line-height: 28px;
+		em {
+			font-weight: 400;
+		}
+	}
 }
 
 /* Copy */
 
 p {
-	margin-bottom: $base__space-unit;
-}
+	margin: $base__space-unit 0;
+
+	&.work-date {
+		font-size: 0.75rem;
+		font-weight: 800;
+		color: $grey;
+		letter-spacing: .6px;
+		text-transform: uppercase;
+	}
+
+	&.role-meta-title {
+		@extend p.work-date;
+	}
+
+	&.role-element {
+		font-size: .75rem;
+	}
+
+	&.tag-element {
+		color: $black_default;
+		font-size: 0.625rem;
+		font-weight: 600;
+		text-transform: uppercase;
+		opacity: .5;
+		&:first-child {
+			opacity: 1;
+		}
+	}
+
+	&.about-me-description-para {
+		font-size: 2.5rem;
+		font-weight: 300;
+		line-height: 1.3;
+		letter-spacing: -1.8px;
+	}
+
+	&.skills-set-element-title {;
+		font-size: .5rem;
+		font-weight: 700;
+		text-align: center;
+	}
+
+	.container-contact & {
+		font-size: .75rem;
+		font-weight: 300;
+		line-height: 1rem;
+	}
+
+	.filter-info & {
+		font-size: .625rem;
+		text-align: center;
+		overflow: visible;
+		white-space: nowrap;
+		text-transform: capitalize;
+	}
+	.filter-by & {
+		font-size: .625rem;
+	}
+} // end p
 
 dfn, cite, em, i {
 	font-style: italic;
+
+	.about-me-description-para & {
+		font-weight: 400;
+		letter-spacing: 0;
+	}
+
+}
+em {
+	&.em-quote {
+		display: block;
+	}
+}
+cite {
+	&.small {
+		display: block;
+		font-size: .75rem;
+		font-style: normal;
+		line-height: 1.5;
+	}
+	&.line-through {
+		text-decoration: line-through;
+	}
 }
 
 blockquote {
@@ -40,7 +203,6 @@ address {
 pre {
 	background: $color__background-pre;
 	font-family: $font__pre;
-	@include font-size(0.9375);
 	line-height: $font__line-height-pre;
 	margin-bottom: 1.6rem;
 	max-width: 100%;
@@ -50,7 +212,6 @@ pre {
 
 code, kbd, tt, var {
 	font-family: $font__code;
-	@include font-size(0.9375);
 }
 
 abbr, acronym {
@@ -65,4 +226,24 @@ mark, ins {
 
 big {
 	font-size: 125%;
+}
+
+footer {
+	color: $white;
+	a {
+		font-size: .75rem;
+		color: $white;
+	}
+}
+
+.filter {
+
+	&-by {
+		i, select {color: $white;}
+		select {
+			font-size: .75rem;
+			text-align: center;
+			text-align-last: center;
+		}
+	}
 }

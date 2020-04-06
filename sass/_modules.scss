@@ -17,7 +17,6 @@
 		clip: auto !important;
 		color: $color__text-screen;
 		display: block;
-		@include font-size(0.875);
 		font-weight: bold;
 		height: auto;
 		left: 5px;
@@ -34,22 +33,7 @@
 # Alignments
 --------------------------------------------------------------*/
 
-.alignleft {
-	display: inline;
-	float: left;
-	margin-right: $base__space-unit;
-}
 
-.alignright {
-	display: inline;
-	float: right;
-	margin-left: $base__space-unit;
-}
-
-.aligncenter {
-	clear: both;
-	@include center-block;
-}
 
 /*--------------------------------------------------------------
 # Clearings

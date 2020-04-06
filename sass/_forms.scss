@@ -13,11 +13,11 @@ input[type="submit"] {
 	border-radius: 3px;
 	background: #e6e6e6;
 	box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.5), inset 0 15px 17px rgba(255, 255, 255, 0.5), inset 0 -5px 12px rgba(0, 0, 0, 0.05);
-	color: rgba(0, 0, 0, .8);
-	@include font-size(0.75);
+	color: $color__text-main;
 	line-height: 1;
 	padding: .6rem 1rem .4rem;
 	text-shadow: 0 1px 0 rgba(255, 255, 255, 0.8);
+	cursor: pointer;
 
 	&:hover {
 		border-color: #ccc #bbb #aaa;
@@ -28,6 +28,79 @@ input[type="submit"] {
 	&:focus {
 		border-color: #aaa #bbb #bbb;
 		box-shadow: inset 0 -1px 0 rgba(255, 255, 255, 0.5), inset 0 2px 5px rgba(0, 0, 0, 0.15);
+	}
+
+	&.default {
+		display: flex;
+		align-items: center;
+		justify-items: center;
+		margin: 0; padding: 0;
+		min-height: 2rem;
+		border-radius: 1rem;
+		background-color: transparent;
+		border: 1px solid $yellow;
+		box-shadow: none;
+		text-shadow: none;
+		transition: $ani__time-default;
+
+		&:hover {
+			background-color: rgba(255,255,255,0.24);
+			a {
+				color: $white;
+			}
+		}
+
+		a  {
+			padding: .5rem 1rem;
+		}
+	}
+
+	&.black {
+		@extend .default;
+		background-color: $black_default;
+		border: none;
+		box-shadow: 0 2px 8px 0 rgba(0,0,0,0.28);
+		a {
+			color: $white;
+		}
+		&:hover {
+			background-color: $black_default;
+			border: none;
+			opacity: .4;
+		}
+	}
+}
+
+// Front-page
+input[type="radio"] {
+	.filter-txt & {
+		display: none;
+	}
+}
+
+label {
+	cursor: pointer;
+	.filter-txt & {
+		display: block;
+		height: 24px;
+		line-height: 24px;
+		padding: 0 .5rem;
+		font-size: 0.75rem;
+		border: $border__default-black;
+	}
+	.filter-txt:first-child & {
+		border-top-left-radius: 12px;
+		border-bottom-left-radius: 12px;
+		border-right: none;
+	}
+	.filter-txt:last-child & {
+		border-top-right-radius: 12px;
+		border-bottom-right-radius: 12px;
+		border-left: none;
+	}
+	.filter-txt.active & {
+		background-color: $black_default;
+		color: $white;
 	}
 }
 
