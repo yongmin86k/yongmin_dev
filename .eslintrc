@@ -23,7 +23,7 @@
     "jQuery": false,
     "$": false,
     "_": false,
-    "Flickity": false
+    "ymk_api_works": false
   },
   "env": {
     "es6": true,

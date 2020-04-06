@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="500px" height="500px" viewBox="0 0 500 500" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: sketchtool 51 (57462) - http://www.bohemiancoding.com/sketch -->
+    <title>2AF35B2E-6A9C-4DAF-9798-76E91A6C6491</title>
+    <desc>Created with sketchtool.</desc>
+    <defs></defs>
+    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="logo/ic_logo">
+            <g id="ic_logo">
+                <rect id="Rectangle-3" x="0" y="0" width="500" height="500"></rect>
+                <polygon id="Fill-1" fill="#FFFFFF" points="60 74 160 174 260.001 174 160 74"></polygon>
+            </g>
+            <path d="M360.001,74.001 L460,74.001 L360.001,174 L310,224 L210.001,224 L360.001,74.001 Z M210,232.579 L210,223.999 L210.001,224 L210,223.999 L210.001,224 L280.712,294.711 L280.712,303.289 L280.712,436.131 L280.712,444.711 L210,374 L210,365.422 L210,232.579 Z" id="Combined-Shape" fill="#FFFFFF"></path>
+            <path d="M60,132.578 L60,124 L130.711,194.711 L130.711,203.29 L130.711,244.71 L130.711,246.953 L130.711,253.29 L130.711,255.532 L130.711,294.711 L130.711,296.953 L130.711,303.289 L130.711,305.532 L130.711,436.131 L130.711,444.711 L60,374.001 L60,365.422 L60,234.822 L60,232.579 L60,226.243 L60,223.999 L60,184.822 L60,182.579 L60,176.243 L60,174 L60,132.578 Z M360.001,174 L430.711,244.71 L430.711,253.29 L430.711,294.711 L430.711,296.953 L430.711,303.289 L430.711,305.532 L430.711,436.131 L430.711,444.711 L360.001,374.001 L360.001,365.422 L360.001,234.822 L360.001,232.579 L360.001,226.243 L360.001,223.999 L360.001,182.579 L360.001,174 Z" id="Combined-Shape" fill="#FFFFFF" opacity="0.482254452"></path>
+        </g>
+    </g>
+</svg>

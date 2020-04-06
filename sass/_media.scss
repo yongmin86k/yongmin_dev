@@ -26,7 +26,6 @@ object {
 	max-width: 100%;
 
 	img[class*="wp-image-"] {
-		@include center-block;
 	}
 
 	.wp-caption-text {
